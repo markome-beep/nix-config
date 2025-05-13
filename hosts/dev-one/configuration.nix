@@ -8,25 +8,12 @@
   imports = [ 
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../../modules/nixos/main-user.nix
-      ../../modules/nixos/hyprland.nix
+      ../../modules/modules.nix
       inputs.home-manager.nixosModules.default
     ];
 
   # Custom Settings ---------------------------------------------
   nix.settings.experimental-features = ["nix-command" "flakes"];
-
-  programs.zsh.enable = true;
-  main-user.enable = true;
-  main-user.userName = "pmarko";
-
-  home-manager = {
-    extraSpecialArgs = {inherit inputs;};
-    users = {
-      "pmarko" = import ./home.nix;
-    };
-    backupFileExtension = "backup";
-  };
   # -------------------------------------------------------------
 
   # Bootloader.
@@ -76,12 +63,13 @@
     vim
     wget
     git
-    neovim
     btop
     kitty
     wezterm
     microsoft-edge
     firefox
+    webcord
+    vesktop
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
