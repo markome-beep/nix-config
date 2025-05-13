@@ -20,12 +20,30 @@
         formatter = {
           conform-nvim.enable = true;
         };
+
         utility = {
           sleuth.enable = true;
           oil-nvim.enable = true;
         };
+
         # vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
         # vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+        keymaps = [
+          {
+            key = "J";
+            mode = "v";
+            silent = true;
+            action = ":m '>+1<CR>gv=gv";
+          }
+
+          {
+            key = "K";
+            mode = "v";
+            silent = true;
+            action = ":m '<-2<CR>gv=gv";
+          }
+        ];
+
         lsp.enable = true;
 
         languages = {
@@ -34,6 +52,7 @@
           nix.enable = true;
           ts.enable = true;
           rust.enable = true;
+          lua.enable = true;
         };
       };
     };
