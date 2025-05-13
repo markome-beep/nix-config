@@ -1,11 +1,8 @@
--- Pull in the wezterm API
 local wezterm = require 'wezterm'
 
--- This will hold the configuration.
 local config = wezterm.config_builder()
 
--- or, changing the font size and color scheme.
-config.color_scheme = 'TokyoNight'
+config.color_scheme = 'Builtin TokyoNight'
+config.enable_tab_bar = false;
 
--- Finally, return the configuration to wezterm:
 return config
