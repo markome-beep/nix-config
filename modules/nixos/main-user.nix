@@ -1,12 +1,14 @@
-{lib, config, pkgs, ... }:
-
-let
-  cfg = config.main-user;
-in
 {
+  lib,
+  config,
+  pkgs,
+  ...
+}: let
+  cfg = config.main-user;
+in {
   options.main-user = {
-    enable
-      = lib.mkEnableOption "enable user module";
+    enable =
+      lib.mkEnableOption "enable user module";
 
     userName = lib.mkOption {
       default = "mainuser";
@@ -21,7 +23,7 @@ in
       isNormalUser = true;
       initialPassword = "nixos";
       description = "Main User";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = ["networkmanager" "wheel"];
       shell = pkgs.zsh;
       packages = with pkgs; [];
     };

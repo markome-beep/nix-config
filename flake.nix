@@ -18,12 +18,17 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = {
+    self,
+    nixpkgs,
+    ...
+  } @ inputs: {
     nixosConfigurations = {
       dev-one = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/dev-one/configuration.nix
+          inputs.nvf.nixosModules.default
           inputs.home-manager.nixosModules.default
         ];
       };
