@@ -1,9 +1,4 @@
-{
-  inputs,
-  pkgs,
-  config,
-  ...
-}: {
+{inputs, ...}: {
   imports = [
     inputs.home-manager.nixosModules.default
   ];
@@ -30,17 +25,19 @@
             monitor = ",prefered,auto,1";
 
             "$terminal" = "wezterm";
+            "$browser" = "microsoft-edge --ozone-platform=wayland '$@'";
             "$fileManager" = "dolphin";
             "$menu" = "wofi --show drun";
 
             exec-once = [
               "$terminal"
-              "waybar & hyprpaper & microsoft-edge --ozone-platform=wayland '$@'"
+              "$browser"
+              "$browser"
             ];
 
             env = [
-              "XCURSOR_SIZE,24"
-              "HYPRCURSOR_SIZE,24"
+              "XCURSOR_SIZE,16"
+              "HYPRCURSOR_SIZE,16"
             ];
 
             input = {
@@ -58,7 +55,7 @@
                 "$mod, t, exec, $terminal"
                 "$mod, m, exit,"
                 "$mod, f, exec, $fileManager"
-                "$mod, b, exec, microsoft-edge --ozone-platform=wayland '$@'"
+                "$mod, b, exec, $browser"
 
                 # Movement
                 "$mod, l, movefocus, r"

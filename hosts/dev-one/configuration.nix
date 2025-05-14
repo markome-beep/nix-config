@@ -2,7 +2,6 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
-  config,
   pkgs,
   inputs,
   ...
@@ -21,10 +20,21 @@
 
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
-    users = {
-      "pmarko" = import ./home.nix;
-    };
     backupFileExtension = "backup";
+
+    users.pmarko = {
+      home.username = "pmarko";
+      home.homeDirectory = "/home/pmarko";
+
+      home.stateVersion = "24.11"; # Please read the comment before changing.
+
+      home.sessionVariables = {
+        EDITOR = "nvim";
+      };
+
+      # Let Home Manager install and manage itself.
+      programs.home-manager.enable = true;
+    };
   };
   # -------------------------------------------------------------
 

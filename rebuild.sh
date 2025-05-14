@@ -10,6 +10,8 @@ alejandra . &>/dev/null \
 # Shows your changes
 git diff -U0 '*.nix'
 
+git add .
+
 echo "NixOS Rebuilding..."
 sudo nixos-rebuild switch --flake ~/nixos#dev-one \
   &>nixos-switch.log || (cat nixos-switch.log | grep --color error && exit 1)
