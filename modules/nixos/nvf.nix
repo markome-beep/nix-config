@@ -8,6 +8,8 @@
 
     settings = {
       vim = {
+        undoFile.enable = true;
+
         theme = {
           enable = true;
           name = "tokyonight";
@@ -26,8 +28,6 @@
           oil-nvim.enable = true;
         };
 
-        # vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
-        # vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
         keymaps = [
           {
             key = "J";
@@ -49,7 +49,12 @@
         languages = {
           enableTreesitter = true;
 
-          nix.enable = true;
+          nix = {
+            enable = true;
+            format.enable = true;
+            lsp.server = "nixd";
+          };
+
           ts.enable = true;
           rust.enable = true;
           lua.enable = true;

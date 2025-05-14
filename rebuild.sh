@@ -3,8 +3,6 @@ set -e
 pushd ~/nixos
 alejandra . &>/dev/null
 
-git diff -U0 '*.nix'
-
 # Autoformat your nix files
 alejandra . &>/dev/null \
   || ( alejandra . ; echo "formatting failed!" && exit 1)
