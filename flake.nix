@@ -11,11 +11,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland";
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
+    # hyprland.url = "github:hyprwm/Hyprland";
+    # hyprland-plugins = {
+    #   url = "github:hyprwm/hyprland-plugins";
+    #   inputs.hyprland.follows = "hyprland";
+    # };
   };
 
   outputs = {
@@ -28,6 +28,7 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/dev-one/configuration.nix
+          ./modules
           inputs.nvf.nixosModules.default
           inputs.home-manager.nixosModules.default
         ];
