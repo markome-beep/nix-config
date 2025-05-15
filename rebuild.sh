@@ -10,8 +10,7 @@ alejandra . &>/dev/null \
 git add .
 
 echo "NixOS Rebuilding..."
-sudo nixos-rebuild switch --flake ~/nixos#dev-one \
-  &>nixos-switch.log || cat nixos-switch.log
+sudo nixos-rebuild switch --flake ~/nixos#dev-one | tee nixos-switch.log || cat nixos-switch.log
 
 # Get current generation metadata
 current=$(nixos-rebuild list-generations | grep current)
