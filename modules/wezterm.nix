@@ -1,10 +1,10 @@
 {
-  inputs,
   pkgs,
+  home-manager,
   ...
 }: {
   imports = [
-    inputs.home-manager.nixosModules.default
+    home-manager.nixosModules.default
   ];
 
   config = {
