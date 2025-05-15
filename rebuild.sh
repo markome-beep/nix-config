@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 set -e
 pushd ~/nixos
-alejandra . &>/dev/null
 
 # Autoformat your nix files
 alejandra . &>/dev/null \
@@ -16,7 +15,7 @@ script -q -c "sudo nixos-rebuild switch --flake ~/nixos#dev-one" /dev/null | tee
 current=$(nixos-rebuild list-generations | grep current)
 
 # Commit all changes witih the generation metadata
-git commit -am "$current"
+git commit -m "$current"
 
 popd
 

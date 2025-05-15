@@ -1,11 +1,20 @@
-{home-manager, ...}: {
+{
+  home-manager,
+  pkgs,
+  ...
+}: {
   imports = [
     home-manager.nixosModules.default
   ];
 
   config = {
     programs.hyprland.enable = true;
-    environment.sessionVariables.NIXOS_OZONE_WL = "1";
+    environment = {
+      sessionVariables.NIXOS_OZONE_WL = "1";
+      systemPackages = with pkgs; [
+        waybar
+      ];
+    };
 
     home-manager.users.pmarko.wayland.windowManager.hyprland = {
       enable = true;
