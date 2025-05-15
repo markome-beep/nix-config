@@ -33,7 +33,7 @@
         exec-once = [
           "$terminal"
           "$browser"
-          "$browser"
+          "$waybar"
         ];
 
         env = [
