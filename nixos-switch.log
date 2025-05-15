@@ -1,26 +1,28 @@
-warning: Git tree '/home/pmarko/nixos' is dirty
-error:
-       … while calling the 'seq' builtin
-         at /nix/store/5kvgq7in0sp9gmhcx0027fizxyqgn1ki-source/lib/modules.nix:359:18:
+[sudo] password for pmarko: 
+[0m[K[K[35;1mwarning:[0m Git tree '/home/pmarko/nixos' is dirty[0m
+evaluating derivation 'git+file:///home/pmarko/nixos#nixosConfigurations."dev-one".config.system.build.nixos-rebuild'[0m[K[0m[K[K[31;1merror:[0m
+       … while calling the '[35;1mseq[0m' builtin
+         [34;1mat [35;1m/nix/store/5kvgq7in0sp9gmhcx0027fizxyqgn1ki-source/lib/modules.nix:359:18[0m:
           358|         options = checked options;
           359|         config = checked (removeAttrs config [ "_module" ]);
-             |                  ^
+             |                  [31;1m^[0m
           360|         _module = checked (config._module);
 
        … while evaluating a branch condition
-         at /nix/store/5kvgq7in0sp9gmhcx0027fizxyqgn1ki-source/lib/modules.nix:295:9:
+         [34;1mat [35;1m/nix/store/5kvgq7in0sp9gmhcx0027fizxyqgn1ki-source/lib/modules.nix:295:9[0m:
           294|       checkUnmatched =
           295|         if config._module.check && config._module.freeformType == null && merged.unmatchedDefns != [ ] then
-             |         ^
+             |         [31;1m^[0m
           296|           let
 
-       … while evaluating the module argument `inputs' in "/nix/store/c8w7l49lmwg7dfpzmbi5fi661vp4c0ra-source/modules/wezterm.nix":
+       … while evaluating the module argument `inputs' in "/nix/store/rkqwdkvsdl0mcz8h1fghfbg5yaf3ylim-source/modules/wezterm.nix":
 
-       (stack trace truncated; use '--show-trace' to show the full, detailed trace)
+       [35;1m(stack trace truncated; use '--show-trace' to show the full, detailed trace)[0m
 
-       error: infinite recursion encountered
-       at /nix/store/5kvgq7in0sp9gmhcx0027fizxyqgn1ki-source/lib/modules.nix:652:66:
+       [31;1merror:[0m infinite recursion encountered
+       [34;1mat [35;1m/nix/store/5kvgq7in0sp9gmhcx0027fizxyqgn1ki-source/lib/modules.nix:652:66[0m:
           651|       extraArgs = mapAttrs (
           652|         name: _: addErrorContext (context name) (args.${name} or config._module.args.${name})
-             |                                                                  ^
-          653|       ) (functionArgs f);
+             |                                                                  [31;1m^[0m
+          653|       ) (functionArgs f);[0m
+[K
