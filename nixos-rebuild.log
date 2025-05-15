@@ -1,2 +1,2 @@
-[sudo] password for pmarko: 
-sudo: a password is required
+[0m[K[K[31;1merror:[0m getting status of '[35;1m/root/nixos[0m': [35;1mNo such file or directory[0m[0m
+[K
