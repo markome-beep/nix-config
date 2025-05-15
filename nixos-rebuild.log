@@ -1,2 +1,10 @@
-[0m[K[K[31;1merror:[0m getting status of '[35;1m/root/nixos[0m': [35;1mNo such file or directory[0m[0m
-[K
+[sudo] password for pmarko: 
+[0m[K[K[35;1mwarning:[0m Git tree '/home/pmarko/nixos' is dirty[0m
+evaluating derivation 'git+file:///home/pmarko/nixos#nixosConfigurations."dev-one".config.s[0m[K[0m[K[Kbuilding the system configuration...
+[0m[K[K[35;1mwarning:[0m Git tree '/home/pmarko/nixos' is dirty[0m
+evaluating derivation 'git+file:///home/pmarko/nixos#nixosConfigurations."dev-one".config.s[0m[Kcopying '/nix/store/5kvgq7in0sp9gmhcx0027fizxyqgn1ki-source/nixos' to the store[0m[Kevaluating derivation 'git+file:///home/pmarko/nixos#nixosConfigurations."dev-one".config.s[0m[Kquerying [1mhome-manager-generation[0m on https://cache.nixos.org[0m[K[[32;1m0[0m/127 built, [32;1m0.0[0m MiB DL] [0m[K[[32;1m0[0m/45 built, [32;1m0.0[0m MiB DL] [0m[K[[32;1m0[0m/7 built, [32;1m0.0[0m MiB DL] [0m[K[[34;1m1[0m/[32;1m0[0m/7 built, [32;1m0.0[0m MiB DL] building [1mhm_hyprhyprland.conf[0m[0m[K[[32;1m1[0m/7 built, [32;1m0.0[0m MiB DL] [0m[K[[34;1m1[0m/[32;1m1[0m/7 built, [32;1m0.0[0m MiB DL] building [1mhome-manager-files[0m[0m[K[[32;1m2[0m/7 built, [32;1m0.0[0m MiB DL] [0m[K[[34;1m1[0m/[32;1m2[0m/7 built, [32;1m0.0[0m MiB DL] building [1mhome-manager-generation[0m[0m[K[[32;1m3[0m/7 built, [32;1m0.0[0m MiB DL] [0m[K[[34;1m1[0m/[32;1m3[0m/7 built, [32;1m0.0[0m MiB DL] building [1munit-home-manager-pmarko.service[0m[0m[K[[32;1m4[0m/7 built, [32;1m0.0[0m MiB DL] [0m[K[[34;1m1[0m/[32;1m4[0m/7 built, [32;1m0.0[0m MiB DL] building [1msystem-units[0m[0m[K[[32;1m5[0m/7 built, [32;1m0.0[0m MiB DL] [0m[K[[34;1m1[0m/[32;1m5[0m/7 built, [32;1m0.0[0m MiB DL] building [1metc[0m[0m[K[[32;1m6[0m/7 built, [32;1m0.0[0m MiB DL] [0m[K[[34;1m1[0m/[32;1m6[0m/7 built, [32;1m0.0[0m MiB DL] building [1mnixos-system-nixos-25.05.20250507.8fcc714[0m[0m[K[[32;1m7[0m built, [32;1m0.0[0m MiB DL][0m[K[Kactivating the configuration...
+setting up /etc...
+reloading user units for pmarko...
+restarting sysinit-reactivation.target
+the following new units were started: NetworkManager-dispatcher.service
+Done. The new configuration is /nix/store/d2h5k5jks1lbfrzz69alj76chff2g90k-nixos-system-nixos-25.05.20250507.8fcc714
