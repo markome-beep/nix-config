@@ -7,14 +7,11 @@ alejandra . &>/dev/null
 alejandra . &>/dev/null \
   || ( alejandra . ; echo "formatting failed!" && exit 1)
 
-# Shows your changes
-git diff -U0 '*.nix'
-
 git add .
 
 echo "NixOS Rebuilding..."
 sudo nixos-rebuild switch --flake ~/nixos#dev-one \
-  &>nixos-switch.log || (cat nixos-switch.log | grep --color error && exit 1)
+  &>nixos-switch.log || cat nixos-switch.log
 
 # Get current generation metadata
 current=$(nixos-rebuild list-generations | grep current)

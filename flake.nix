@@ -4,33 +4,30 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    nvf.url = "github:notashelf/nvf";
+    nvf = {
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # hyprland.url = "github:hyprwm/Hyprland";
-    # hyprland-plugins = {
-    #   url = "github:hyprwm/hyprland-plugins";
-    #   inputs.hyprland.follows = "hyprland";
-    # };
   };
 
   outputs = {
-    self,
     nixpkgs,
+    home-manager,
     ...
   } @ inputs: {
     nixosConfigurations = {
       dev-one = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+        specialArgs = {inherit home-manager;};
         modules = [
           ./hosts/dev-one/configuration.nix
           ./modules
+          home-manager.nixosModules.default
           inputs.nvf.nixosModules.default
-          inputs.home-manager.nixosModules.default
         ];
       };
     };

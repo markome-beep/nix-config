@@ -3,12 +3,12 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   pkgs,
-  inputs,
+  home-manager,
   ...
 }: {
   imports = [
     ./hardware-configuration.nix
-    inputs.home-manager.nixosModules.default
+    home-manager.nixosModules.default
   ];
 
   # Custom Settings ---------------------------------------------
@@ -19,14 +19,11 @@
   main-user.userName = "pmarko";
 
   home-manager = {
-    extraSpecialArgs = {inherit inputs;};
     backupFileExtension = "backup";
 
     users.pmarko = {
-      home.username = "pmarko";
-      home.homeDirectory = "/home/pmarko";
-
-      home.stateVersion = "24.11"; # Please read the comment before changing.
+      # home.username = "pmarko";
+      # home.homeDirectory = "/home/pmarko";
 
       home.sessionVariables = {
         EDITOR = "nvim";
@@ -34,6 +31,8 @@
 
       # Let Home Manager install and manage itself.
       programs.home-manager.enable = true;
+
+      home.stateVersion = "24.11";
     };
   };
   # -------------------------------------------------------------

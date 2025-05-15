@@ -51,8 +51,8 @@
 
           nix = {
             enable = true;
-            format.enable = true;
-            lsp.server = "nixd";
+            # format.enable = true;
+            # lsp.server = "nixd";
           };
 
           ts.enable = true;

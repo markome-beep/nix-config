@@ -8,15 +8,10 @@
   ];
 
   config = {
-    home-manager = {
-      extraSpecialArgs = {inherit inputs;};
-      backupFileExtension = "backup";
+    home-manager.users.pmarko = {
+      home.packages = with pkgs; [wezterm];
 
-      users.pmarko = {
-        home.packages = with pkgs; [wezterm];
-
-        xdg.configFile."wezterm/wezterm.lua".source = ./dotfiles/wezterm.lua;
-      };
+      xdg.configFile."wezterm/wezterm.lua".source = ./dotfiles/wezterm.lua;
     };
   };
 }

@@ -1,28 +1,26 @@
 warning: Git tree '/home/pmarko/nixos' is dirty
-building the system configuration...
-warning: Git tree '/home/pmarko/nixos' is dirty
-these 9 derivations will be built:
-  /nix/store/0ay5mzlr0rvvxci73d17bf5018d4r25s-home-manager-path.drv
-  /nix/store/65n4fyp00vsb69mki0vn2ja5z1y2vzc0-activation-script.drv
-  /nix/store/g6f9prql8009jcnmqrry2jpqn0lr1izf-hm_hyprhyprland.conf.drv
-  /nix/store/xlzlw8ckva5ckks71nw8qvyamxwq7y4j-home-manager-files.drv
-  /nix/store/5jc0jj3mwqsc3cj8s5f0vdrdxqqmpg59-home-manager-generation.drv
-  /nix/store/1l3dk3crgraavgsa34b1a45w2js306bl-unit-home-manager-pmarko.service.drv
-  /nix/store/5s965jc4iyjgq4whf729zvcz12hqgxnw-system-units.drv
-  /nix/store/w5a86f4f0bnbnv4vl4mzgrg6p702myln-etc.drv
-  /nix/store/sb5smynslhwhkfx1f62cgcivms2z0fa5-nixos-system-nixos-25.05.20250507.8fcc714.drv
-building '/nix/store/0ay5mzlr0rvvxci73d17bf5018d4r25s-home-manager-path.drv'...
-building '/nix/store/g6f9prql8009jcnmqrry2jpqn0lr1izf-hm_hyprhyprland.conf.drv'...
-building '/nix/store/xlzlw8ckva5ckks71nw8qvyamxwq7y4j-home-manager-files.drv'...
-building '/nix/store/65n4fyp00vsb69mki0vn2ja5z1y2vzc0-activation-script.drv'...
-building '/nix/store/5jc0jj3mwqsc3cj8s5f0vdrdxqqmpg59-home-manager-generation.drv'...
-building '/nix/store/1l3dk3crgraavgsa34b1a45w2js306bl-unit-home-manager-pmarko.service.drv'...
-building '/nix/store/5s965jc4iyjgq4whf729zvcz12hqgxnw-system-units.drv'...
-building '/nix/store/w5a86f4f0bnbnv4vl4mzgrg6p702myln-etc.drv'...
-building '/nix/store/sb5smynslhwhkfx1f62cgcivms2z0fa5-nixos-system-nixos-25.05.20250507.8fcc714.drv'...
-activating the configuration...
-setting up /etc...
-reloading user units for pmarko...
-restarting sysinit-reactivation.target
-the following new units were started: NetworkManager-dispatcher.service, sysinit-reactivation.target, systemd-tmpfiles-resetup.service
-Done. The new configuration is /nix/store/kyx338i3yhgp2vwnn3p2jmhrmbg7wa1y-nixos-system-nixos-25.05.20250507.8fcc714
+error:
+       … while calling the 'seq' builtin
+         at /nix/store/5kvgq7in0sp9gmhcx0027fizxyqgn1ki-source/lib/modules.nix:359:18:
+          358|         options = checked options;
+          359|         config = checked (removeAttrs config [ "_module" ]);
+             |                  ^
+          360|         _module = checked (config._module);
+
+       … while evaluating a branch condition
+         at /nix/store/5kvgq7in0sp9gmhcx0027fizxyqgn1ki-source/lib/modules.nix:295:9:
+          294|       checkUnmatched =
+          295|         if config._module.check && config._module.freeformType == null && merged.unmatchedDefns != [ ] then
+             |         ^
+          296|           let
+
+       … while evaluating the module argument `inputs' in "/nix/store/dikmncig7vykq66405qgn503rcljknx8-source/modules/wezterm.nix":
+
+       (stack trace truncated; use '--show-trace' to show the full, detailed trace)
+
+       error: infinite recursion encountered
+       at /nix/store/5kvgq7in0sp9gmhcx0027fizxyqgn1ki-source/lib/modules.nix:652:66:
+          651|       extraArgs = mapAttrs (
+          652|         name: _: addErrorContext (context name) (args.${name} or config._module.args.${name})
+             |                                                                  ^
+          653|       ) (functionArgs f);
