@@ -15,7 +15,7 @@
              |         [31;1m^[0m
           296|           let
 
-       … while evaluating the module argument `inputs' in "/nix/store/rkqwdkvsdl0mcz8h1fghfbg5yaf3ylim-source/modules/wezterm.nix":
+       … while evaluating the module argument `inputs' in "/nix/store/i7nnz79j2m1ly4s1z78vcx5pcdx4pfqh-source/modules/wezterm.nix":
 
        [35;1m(stack trace truncated; use '--show-trace' to show the full, detailed trace)[0m
 
