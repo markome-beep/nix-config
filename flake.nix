@@ -19,11 +19,12 @@
     nixpkgs,
     home-manager,
     ...
-  } @ inputs: {
+  } @ inputs: let
+    sys = builtins.trace nixpkgs nixpkgs.lib.nixosSystem;
+  in {
     nixosConfigurations = {
-      dev-one = nixpkgs.lib.nixosSystem {
+      dev-one = sys {
         specialArgs = {inherit home-manager;};
-        null = builtins.trace nixpkgs;
         modules = [
           ./hosts/dev-one/configuration.nix
           ./modules
