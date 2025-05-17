@@ -43,8 +43,8 @@ in {
         pavucontrol
         hyprpicker
         pipewire
-        nm-applet
-        blueman-applet
+        networkmanagerapplet
+        blueman
       ];
     };
 
