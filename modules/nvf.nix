@@ -65,7 +65,10 @@
           }
         ];
 
-        lsp.enable = true;
+        lsp = {
+          formatOnSave = true;
+          enable = true;
+        };
         languages = {
           enableTreesitter = true;
           enableFormat = true;
