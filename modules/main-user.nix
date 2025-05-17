@@ -26,5 +26,23 @@ in {
       extraGroups = ["networkmanager" "wheel"];
       shell = pkgs.zsh;
     };
+
+    home-manager = {
+      backupFileExtension = "backup";
+
+      users.${cfg.userName} = {
+        home.username = cfg.userName;
+        home.homeDirectory = "/home/${cfg.userName}";
+
+        home.sessionVariables = {
+          EDITOR = "nvim";
+        };
+
+        # Let Home Manager install and manage itself.
+        programs.home-manager.enable = true;
+
+        home.stateVersion = "24.11";
+      };
+    };
   };
 }

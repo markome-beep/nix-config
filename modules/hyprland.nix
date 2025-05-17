@@ -1,9 +1,11 @@
 {
   home-manager,
   pkgs,
-  userName,
+  config,
   ...
-}: {
+}: let
+  userName = config.main-user.userName;
+in {
   imports = [
     home-manager.nixosModules.default
   ];

@@ -4,7 +4,6 @@
 {
   pkgs,
   home-manager,
-  userName,
   ...
 }: {
   imports = [
@@ -17,25 +16,7 @@
 
   programs.zsh.enable = true;
   main-user.enable = true;
-  main-user.userName = userName;
-
-  home-manager = {
-    backupFileExtension = "backup";
-
-    users.${userName} = {
-      home.username = userName;
-      home.homeDirectory = "/home/${userName}";
-
-      home.sessionVariables = {
-        EDITOR = "nvim";
-      };
-
-      # Let Home Manager install and manage itself.
-      programs.home-manager.enable = true;
-
-      home.stateVersion = "24.11";
-    };
-  };
+  main-user.userName = "pmarko";
   # -------------------------------------------------------------
 
   # Bootloader.
