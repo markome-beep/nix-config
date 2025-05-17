@@ -18,7 +18,15 @@
 
         statusline.lualine.enable = true;
         telescope.enable = true;
-        autocomplete.blink-cmp.enable = true;
+        autocomplete.blink-cmp = {
+          enable = true;
+          mapings = {
+            confirm = "<C-y>";
+            next = "<C-n>";
+            prev = "<C-p>";
+          };
+        };
+
         formatter = {
           conform-nvim.enable = true;
         };
