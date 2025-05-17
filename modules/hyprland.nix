@@ -11,16 +11,24 @@ in {
   ];
 
   config = {
-    programs.hyprland.enable = true;
-    programs.hyprlock.enable = true;
+    programs = {
+      hyprland.enable = true;
+      hyprlock.enable = true;
+    };
 
-    services.greetd = {
-      enable = true;
-      vt = 3;
-      settings = {
-        default_session = {
-          user = userName;
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland"; # start Hyprland with a TUI login manager
+    services = {
+      # Notifications
+      swaync.enable = true;
+
+      # Login
+      greetd = {
+        enable = true;
+        vt = 3;
+        settings = {
+          default_session = {
+            user = userName;
+            command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+          };
         };
       };
     };
@@ -87,7 +95,8 @@ in {
             "$mod, j, movefocus, d"
             "$mod, k, movefocus, u"
 
-            # Workspaces
+            # lock
+            "$mod, <esc>, exec, hyprlock"
           ]
           ++ (
             # workspaces
@@ -132,6 +141,7 @@ in {
 
           layout = "dwindle";
         };
+
         decoration = {
           rounding = 10;
           rounding_power = 2;
