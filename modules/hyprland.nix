@@ -97,7 +97,7 @@ in {
             "$mod, k, movefocus, u"
 
             # lock
-            "$mod, <esc>, exec, hyprlock"
+            "$mod, <ESC>, exec, hyprlock"
           ]
           ++ (
             # workspaces

@@ -64,6 +64,18 @@
             silent = true;
             action = "<CMD>Oil<CR>";
           }
+
+          {
+            key = "<leader>/";
+            mode = "n";
+            silent = true;
+            action = ''
+              function()
+                builtin.live_grep({
+                grep_open_files = true,
+                prompt_title = "Live Grep in Open Files",
+              })'';
+          }
         ];
 
         lsp = {
