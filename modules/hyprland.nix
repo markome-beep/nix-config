@@ -12,6 +12,7 @@ in {
 
   config = {
     programs.hyprland.enable = true;
+
     environment = {
       sessionVariables.NIXOS_OZONE_WL = "1";
       systemPackages = with pkgs; [
@@ -38,11 +39,6 @@ in {
           "$terminal"
           "$browser"
           "waybar & webcord"
-        ];
-
-        env = [
-          "XCURSOR_SIZE,10"
-          "HYPRCURSOR_SIZE,10"
         ];
 
         input = {
@@ -83,6 +79,17 @@ in {
               )
               9)
           );
+
+        bindm = ["$mainMod, mouse:272, movewindow"];
+
+        bindel = [
+          ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+          ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+          ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+          ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+          ",XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+"
+          ",XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-"
+        ];
 
         general = {
           gaps_in = 5;
