@@ -29,12 +29,19 @@ in {
       sessionVariables.NIXOS_OZONE_WL = "1";
       systemPackages = with pkgs; [
         waybar
-        font-awesome
         brightnessctl
         libnotify
         pavucontrol
+        hyprpicker
       ];
     };
+
+    fonts.packages = with pkgs; [
+      font-awesome
+      material-icons
+      fira-code
+      fira-code-symbols
+    ];
 
     home-manager.users.${userName}.wayland.windowManager.hyprland = {
       enable = true;
