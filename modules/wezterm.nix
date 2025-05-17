@@ -1,6 +1,7 @@
 {
   pkgs,
   home-manager,
+  userName,
   ...
 }: {
   imports = [
@@ -8,7 +9,7 @@
   ];
 
   config = {
-    home-manager.users.pmarko = {
+    home-manager.users.${userName} = {
       home.packages = with pkgs; [wezterm];
 
       xdg.configFile."wezterm/wezterm.lua".source = ./dotfiles/wezterm.lua;

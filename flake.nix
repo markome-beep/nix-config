@@ -21,10 +21,14 @@
     ...
   } @ inputs: let
     sys = builtins.trace nixpkgs.narHash nixpkgs.lib.nixosSystem;
+    userName = "pmarko";
   in {
     nixosConfigurations = {
       dev-one = sys {
-        specialArgs = {inherit home-manager;};
+        specialArgs = {
+          inherit home-manager;
+          inherit userName;
+        };
         modules = [
           ./hosts/dev-one/configuration.nix
           ./modules

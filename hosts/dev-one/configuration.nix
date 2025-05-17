@@ -4,6 +4,7 @@
 {
   pkgs,
   home-manager,
+  userName,
   ...
 }: {
   imports = [
@@ -16,14 +17,14 @@
 
   programs.zsh.enable = true;
   main-user.enable = true;
-  main-user.userName = "pmarko";
+  main-user.userName = userName;
 
   home-manager = {
     backupFileExtension = "backup";
 
-    users.pmarko = {
-      # home.username = "pmarko";
-      # home.homeDirectory = "/home/pmarko";
+    users.${userName} = {
+      home.username = userName;
+      home.homeDirectory = "/home/${userName}";
 
       home.sessionVariables = {
         EDITOR = "nvim";

@@ -1,6 +1,7 @@
 {
   home-manager,
   pkgs,
+  userName,
   ...
 }: {
   imports = [
@@ -17,7 +18,7 @@
       ];
     };
 
-    home-manager.users.pmarko.wayland.windowManager.hyprland = {
+    home-manager.users.${userName}.wayland.windowManager.hyprland = {
       enable = true;
       systemd.variables = ["--all"];
       package = null;
