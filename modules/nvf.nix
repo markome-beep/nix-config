@@ -23,7 +23,7 @@
           mappings = {
             confirm = "<C-y>";
             next = "<C-n>";
-            prev = "<C-p>";
+            previous = "<C-p>";
           };
         };
 
@@ -49,6 +49,13 @@
             mode = "v";
             silent = true;
             action = ":m '<-2<CR>gv=gv";
+          }
+
+          {
+            key = "<leader>fe";
+            mode = "n";
+            silent = true;
+            action = "<CMD>Oil<CR>";
           }
         ];
 
