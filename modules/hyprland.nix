@@ -18,6 +18,7 @@ in {
       systemPackages = with pkgs; [
         waybar
         font-awesome
+        brightnessctl
       ];
     };
 
