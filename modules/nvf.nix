@@ -1,10 +1,6 @@
-{
-  pkgs,
-  ...
-}: {
-
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-    alejandra 
+    alejandra
   ];
 
   programs.nvf = {

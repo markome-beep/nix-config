@@ -1,3 +1,4 @@
+Script started on 2025-05-17 14:16:04-04:00 [COMMAND="nixos-rebuild switch --flake .#dev-one" TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="-1" LINES="-1"]
 [0m[K[K[35;1mwarning:[0m Git tree '/home/pmarko/nixos' is dirty[0m
 evaluating derivation 'git+file:///home/pmarko/nixos#nixosConfigurations."dev-one".config.system.build.nixos-rebuild'[0m[K[Kbuilding the system configuration...
 [0m[K[K[35;1mwarning:[0m Git tree '/home/pmarko/nixos' is dirty[0m
@@ -8,3 +9,5 @@ restarting sysinit-reactivation.target
 reloading the following units: dbus.service
 the following new units were started: NetworkManager-dispatcher.service
 Done. The new configuration is /nix/store/2k1qnj8ffh91rcdyk39s8xkxdg64r77w-nixos-system-nixos-25.05.20250507.8fcc714
+
+Script done on 2025-05-17 14:16:19-04:00 [COMMAND_EXIT_CODE="0"]
