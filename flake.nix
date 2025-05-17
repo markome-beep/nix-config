@@ -18,7 +18,6 @@
   outputs = {
     nixpkgs,
     home-manager,
-    lib,
     ...
   } @ inputs: {
     nixosConfigurations = {
