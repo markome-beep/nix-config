@@ -20,7 +20,7 @@
     home-manager,
     ...
   } @ inputs: let
-    sys = builtins.trace nixpkgs nixpkgs.lib.nixosSystem;
+    sys = builtins.trace nixpkgs.narHash nixpkgs.lib.nixosSystem;
   in {
     nixosConfigurations = {
       dev-one = sys {
