@@ -42,6 +42,7 @@ in {
         libnotify
         pavucontrol
         hyprpicker
+        pipewire
       ];
     };
 
@@ -54,7 +55,8 @@ in {
 
     home-manager.users.${userName}.wayland.windowManager.hyprland = {
       enable = true;
-      systemd.variables = ["--all"];
+      systemd.enable = false;
+      # systemd.variables = ["--all"];
       package = null;
       portalPackage = null;
 

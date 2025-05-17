@@ -28,6 +28,7 @@
     fastfetch
     microsoft-edge
     webcord
+    discord
   ];
   # -------------------------------------------------------------
 
