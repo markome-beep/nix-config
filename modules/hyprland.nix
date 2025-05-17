@@ -13,6 +13,17 @@ in {
   config = {
     programs.hyprland.enable = true;
 
+    services.greetd = {
+      enable = true;
+      vt = 3;
+      settings = {
+        default_session = {
+          user = userName;
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland"; # start Hyprland with a TUI login manager
+        };
+      };
+    };
+
     environment = {
       sessionVariables.NIXOS_OZONE_WL = "1";
       systemPackages = with pkgs; [
