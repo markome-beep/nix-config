@@ -12,14 +12,15 @@ in {
 
   config = {
     programs = {
-      hyprland.enable = true;
+      hyprland = {
+        enable = true;
+        withUWSM = true;
+      };
+      uwsm.enable = true;
       hyprlock.enable = true;
     };
 
     services = {
-      # Notifications
-      swaync.enable = true;
-
       # Login
       greetd = {
         enable = true;
