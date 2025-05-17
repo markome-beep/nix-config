@@ -39,7 +39,7 @@ in {
         exec-once = [
           "$terminal"
           "$browser"
-          "waybar & webcord"
+          "waybar"
         ];
 
         input = {
@@ -58,6 +58,7 @@ in {
             "$mod, m, exit,"
             "$mod, f, exec, $fileManager"
             "$mod, b, exec, $browser"
+            "$mod, d, exec, webcord"
 
             # Movement
             "$mod, l, movefocus, r"
