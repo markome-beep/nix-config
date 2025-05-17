@@ -20,7 +20,7 @@
         telescope.enable = true;
         autocomplete.blink-cmp = {
           enable = true;
-          mapings = {
+          mappings = {
             confirm = "<C-y>";
             next = "<C-n>";
             prev = "<C-p>";
