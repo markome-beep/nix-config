@@ -2,9 +2,9 @@
 set -e
 pushd ~/nixos
 
-# Autoformat your nix files
-alejandra . &>/dev/null \
-  || ( alejandra . ; echo "formatting failed!" && exit 1)
+# # Autoformat your nix files
+# alejandra . &>/dev/null \
+#   || ( alejandra . ; echo "formatting failed!" && exit 1)
 
 git add .
 

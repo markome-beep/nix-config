@@ -21,7 +21,7 @@
     ...
   } @ inputs: {
     nixosConfigurations = {
-      dev-one = builtins.trace nixpkgs.lib.nixosSystem nixpkgs.lib.nixosSystem {
+      dev-one = builtins.trace nixpkgs.lib.nixosSystem {
         specialArgs = {inherit home-manager;};
         modules = [
           ./hosts/dev-one/configuration.nix
