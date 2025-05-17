@@ -1,4 +1,16 @@
 [0m[K[K[35;1mwarning:[0m Git tree '/home/pmarko/nixos' is dirty[0m
-evaluating derivation 'git+file:///home/pmarko/nixos#nixosConfigurations."dev-one".config.system.build.nixos-rebuild'[0m[K[Ktrace: «lambda nixosSystem @ /nix/store/5kvgq7in0sp9gmhcx0027fizxyqgn1ki-source/flake.nix:65:13»[0m
-[K[31;1merror:[0m flake '[35;1mgit+file:///home/pmarko/nixos[0m' does not provide attribute [35;1m'packages.x86_64-linux.nixosConfigurations."dev-one".config.system.build.nixos-rebuild', 'legacyPackages.x86_64-linux.nixosConfigurations."dev-one".config.system.build.nixos-rebuild' or 'nixosConfigurations."dev-one".config.system.build.nixos-rebuild'[0m[0m
+evaluating derivation 'git+file:///home/pmarko/nixos#nixosConfigurations."dev-one".config.system.build.nixos-rebuild'[0m[K[K[31;1merror:[0m
+       … from call site
+         [34;1mat [35;1m/nix/store/5kvgq7in0sp9gmhcx0027fizxyqgn1ki-source/flake.nix:66:13[0m:
+           65|             args:
+           66|             import ./nixos/lib/eval-config.nix (
+             |             [31;1m^[0m
+           67|               {
+
+       [31;1merror:[0m function '[35;1manonymous lambda[0m' called with unexpected argument '[35;1mnull[0m'
+       [34;1mat [35;1m/nix/store/5kvgq7in0sp9gmhcx0027fizxyqgn1ki-source/nixos/lib/eval-config.nix:11:1[0m:
+           10| # types.submodule instead of using eval-config.nix
+           11| evalConfigArgs@{
+             | [31;1m^[0m
+           12|   # !!! system can be set modularly, would be nice to remove,[0m
 [0m[K[K
