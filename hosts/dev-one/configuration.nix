@@ -79,9 +79,8 @@
     git
     btop
     lazygit
-    neofetch
+    fastfetch
     microsoft-edge
-    alejandra
     webcord
   ];
 

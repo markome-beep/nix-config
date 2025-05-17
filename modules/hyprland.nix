@@ -34,7 +34,7 @@
         exec-once = [
           "$terminal"
           "$browser"
-          "waybar"
+          "waybar & webcord"
         ];
 
         env = [
