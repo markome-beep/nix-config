@@ -17,6 +17,7 @@
         };
 
         statusline.lualine.enable = true;
+
         telescope.enable = true;
         autocomplete.blink-cmp = {
           enable = true;
@@ -60,7 +61,6 @@
         ];
 
         lsp.enable = true;
-
         languages = {
           enableTreesitter = true;
           enableFormat = true;

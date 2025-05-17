@@ -18,6 +18,8 @@
   main-user.enable = true;
   main-user.userName = "pmarko";
 
+  hardware.bluetooth.enable = true;
+
   environment.systemPackages = with pkgs; [
     wget
     git
