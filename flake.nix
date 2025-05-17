@@ -23,7 +23,7 @@
     nixosConfigurations = {
       dev-one = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit home-manager;};
-        null = builtins.trace nixpkgs;
+        # null = builtins.trace nixpkgs;
         modules = [
           ./hosts/dev-one/configuration.nix
           ./modules
