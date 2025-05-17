@@ -69,7 +69,7 @@
             key = "<leader>/";
             mode = "n";
             silent = true;
-            action = ''
+            expr = ''
               function()
                 builtin.live_grep({
                 grep_open_files = true,
