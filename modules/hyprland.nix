@@ -12,6 +12,7 @@ in {
 
   config = {
     programs.hyprland.enable = true;
+    programs.hyprlock.enable = true;
 
     services.greetd = {
       enable = true;
@@ -30,6 +31,8 @@ in {
         waybar
         font-awesome
         brightnessctl
+        libnotify
+        pavucontrol
       ];
     };
 
