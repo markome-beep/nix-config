@@ -1,5 +1,5 @@
 [0m[K[K[35;1mwarning:[0m Git tree '/home/pmarko/nixos' is dirty[0m
-evaluating derivation 'git+file:///home/pmarko/nixos#nixosConfigurations."dev-one".config.system.build.nixos-rebuild'[0m[K[Kbuilding the system configuration...
+evaluating derivation 'git+file:///home/pmarko/nixos#nixosConfigurations."dev-one".config.system.build.nixos-rebuild'[0m[K[0m[K[Kbuilding the system configuration...
 [0m[K[K[35;1mwarning:[0m Git tree '/home/pmarko/nixos' is dirty[0m
 evaluating derivation 'git+file:///home/pmarko/nixos#nixosConfigurations."dev-one".config.system.build.toplevel'[0m[K^C[0m[K[K[31;1merror:[0m interrupted by the user[0m
 [K

@@ -1,8 +1,12 @@
 {
-  inputs,
   pkgs,
   ...
 }: {
+
+  environment.systemPackages = with pkgs; [
+    alejandra 
+  ];
+
   programs.nvf = {
     enable = true;
 
