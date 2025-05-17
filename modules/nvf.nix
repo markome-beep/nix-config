@@ -69,12 +69,13 @@
             key = "<leader>/";
             mode = "n";
             silent = true;
-            expr = ''
+            action = ''
               function()
                 builtin.live_grep({
                 grep_open_files = true,
                 prompt_title = "Live Grep in Open Files",
               })'';
+            expr = true;
           }
         ];
 
