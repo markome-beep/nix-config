@@ -43,6 +43,8 @@ in {
         pavucontrol
         hyprpicker
         pipewire
+        nm-applet
+        blueman-applet
       ];
     };
 
@@ -57,21 +59,21 @@ in {
       enable = true;
       systemd.enable = false;
       # systemd.variables = ["--all"];
-      package = null;
-      portalPackage = null;
+      # package = null;
+      # portalPackage = null;
 
       settings = {
         monitor = ",prefered,auto,1";
 
         "$terminal" = "wezterm";
         "$browser" = "microsoft-edge --ozone-platform=wayland '$@'";
-        "$fileManager" = "dolphin";
+        "$fileManager" = "nautilis";
         "$menu" = "wofi --show drun";
 
         exec-once = [
           "$terminal"
           "$browser"
-          "waybar"
+          "waybar & nm-applet & blueman-applet"
         ];
 
         input = {
