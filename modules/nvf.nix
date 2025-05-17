@@ -18,7 +18,12 @@
 
         statusline.lualine.enable = true;
 
-        telescope.enable = true;
+        telescope = {
+          enable = true;
+          mappings = {
+            buffers = "<leader><leader>";
+          };
+        };
         autocomplete.blink-cmp = {
           enable = true;
           mappings = {
