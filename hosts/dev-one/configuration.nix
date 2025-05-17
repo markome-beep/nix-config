@@ -17,6 +17,16 @@
   programs.zsh.enable = true;
   main-user.enable = true;
   main-user.userName = "pmarko";
+
+  environment.systemPackages = with pkgs; [
+    wget
+    git
+    btop
+    lazygit
+    fastfetch
+    microsoft-edge
+    webcord
+  ];
   # -------------------------------------------------------------
 
   # Bootloader.
@@ -53,18 +63,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    wget
-    git
-    btop
-    lazygit
-    fastfetch
-    microsoft-edge
-    webcord
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

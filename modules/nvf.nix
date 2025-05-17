@@ -48,13 +48,9 @@
 
         languages = {
           enableTreesitter = true;
+          enableFormat = true;
 
-          nix = {
-            enable = true;
-            # format.enable = true;
-            # lsp.server = "nixd";
-          };
-
+          nix.enable = true;
           ts.enable = true;
           rust.enable = true;
           lua.enable = true;

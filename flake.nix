@@ -20,7 +20,7 @@
     home-manager,
     ...
   } @ inputs: let
-    sys = builtins.trace nixpkgs.narHash nixpkgs.lib.nixosSystem;
+    sys = nixpkgs.lib.nixosSystem;
     userName = "pmarko";
   in {
     nixosConfigurations = {
