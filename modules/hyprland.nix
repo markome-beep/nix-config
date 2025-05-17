@@ -80,7 +80,7 @@ in {
               9)
           );
 
-        bindm = ["$mainMod, mouse:272, movewindow"];
+        bindm = ["$mod, mouse:272, movewindow"];
 
         bindel = [
           ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
