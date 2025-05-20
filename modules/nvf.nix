@@ -78,12 +78,11 @@
             silent = true;
             action = ''
               function()
-                print("TEST")
                 builtin.live_grep({
                   grep_open_files = true,
                   prompt_title = "Live Grep in Open Files",
                 })
-              end`'';
+              end'';
             expr = true;
           }
         ];
