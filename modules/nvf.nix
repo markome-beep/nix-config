@@ -2,6 +2,8 @@
   environment.systemPackages = with pkgs; [
     alejandra
     ripgrep
+    zoxide
+    fzf
   ];
 
   programs.nvf = {
@@ -17,6 +19,10 @@
           style = "night";
         };
 
+        options = {
+          wrap = false;
+        };
+
         statusline.lualine.enable = true;
 
         telescope = {
@@ -25,6 +31,7 @@
             buffers = "<leader><leader>";
           };
         };
+
         autocomplete.blink-cmp = {
           enable = true;
           mappings = {
@@ -72,9 +79,10 @@
             action = ''
               function()
                 builtin.live_grep({
-                grep_open_files = true,
-                prompt_title = "Live Grep in Open Files",
-              })'';
+                  grep_open_files = true,
+                  prompt_title = "Live Grep in Open Files",
+                })
+              end`'';
             expr = true;
           }
         ];

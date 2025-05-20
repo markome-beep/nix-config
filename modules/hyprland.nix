@@ -92,7 +92,7 @@ in {
             "$mod, m, exit,"
             "$mod, f, exec, $fileManager"
             "$mod, b, exec, $browser"
-            "$mod, d, exec, webcord"
+            "$mod, d, exec, discord"
 
             # Movement
             "$mod, l, movefocus, r"
