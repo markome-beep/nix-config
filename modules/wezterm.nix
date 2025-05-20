@@ -15,6 +15,7 @@ in {
       home.packages = with pkgs; [wezterm];
 
       xdg.configFile."wezterm/wezterm.lua".source = ./dotfiles/wezterm.lua;
+      xdg.home.".zshrc".source = ./dotfiles/.zshrc;
     };
   };
 }
