@@ -50,6 +50,10 @@
           oil-nvim.enable = true;
         };
 
+        mini = {
+          icons.enable = true;
+        };
+
         keymaps = [
           {
             key = "J";
