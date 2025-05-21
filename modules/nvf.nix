@@ -81,7 +81,7 @@
             mode = "n";
             silent = true;
             action = "vim.diagnostic.open_float";
-            expr = true;
+            lua = true;
           }
 
           {
@@ -95,7 +95,7 @@
                   prompt_title = "Live Grep in Open Files",
                 })
               end'';
-            expr = true;
+            lua = true;
           }
         ];
 
