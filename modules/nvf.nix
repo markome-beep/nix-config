@@ -77,6 +77,14 @@
           }
 
           {
+            key = "<leader>e";
+            mode = "n";
+            silent = true;
+            action = "vim.diagnostic.open_float";
+            expr = true;
+          }
+
+          {
             key = "<leader>/";
             mode = "n";
             silent = true;
