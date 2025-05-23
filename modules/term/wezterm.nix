@@ -8,8 +8,8 @@
 in {
   imports = [
     home-manager.nixosModules.default
-    ./go
-    ./rust
+    ./go.nix
+    ./rust.nix
   ];
 
   config = {
