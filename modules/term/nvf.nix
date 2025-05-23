@@ -51,7 +51,7 @@
 
         mini = {
           icons.enable = true;
-          surround = true;
+          surround.enable = true;
         };
 
         keymaps = [
