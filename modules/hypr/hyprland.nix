@@ -18,21 +18,24 @@ in {
       };
       uwsm.enable = true;
       hyprlock.enable = true;
-    };
-
-    services = {
-      # Login
-      greetd = {
+      regreet = {
         enable = true;
-        vt = 3;
-        settings = {
-          default_session = {
-            user = userName;
-            command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time";
-          };
-        };
       };
     };
+
+    # services = {
+    #   # Login
+    #   greetd = {
+    #     enable = true;
+    #     vt = 3;
+    #     settings = {
+    #       default_session = {
+    #         user = userName;
+    #         command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time";
+    #       };
+    #     };
+    #   };
+    # };
 
     environment = {
       sessionVariables.NIXOS_OZONE_WL = "1";
