@@ -8,6 +8,7 @@
 in {
   imports = [
     home-manager.nixosModules.default
+    ./login.nix
   ];
 
   config = {
@@ -18,20 +19,6 @@ in {
       };
       uwsm.enable = true;
       hyprlock.enable = true;
-    };
-
-    services = {
-      # Login
-      greetd = {
-        enable = true;
-        vt = 3;
-        settings = {
-          default_session = {
-            user = userName;
-            command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time";
-          };
-        };
-      };
     };
 
     environment = {
@@ -59,9 +46,6 @@ in {
     home-manager.users.${userName}.wayland.windowManager.hyprland = {
       enable = true;
       systemd.enable = false;
-      # systemd.variables = ["--all"];
-      # package = null;
-      # portalPackage = null;
 
       settings = {
         monitor = ",prefered,auto,1";
@@ -154,7 +138,7 @@ in {
 
           # Change transparency of focused and unfocused windows
           active_opacity = 1.0;
-          inactive_opacity = 0.75;
+          inactive_opacity = 0.9;
 
           shadow = {
             enabled = true;
