@@ -18,8 +18,8 @@ in {
     ];
 
     home-manager.users.${userName} = {
-      xdg.configFile."wezterm/wezterm.lua".source = ./dotfiles/wezterm.lua;
-      home.file.".zshrc".source = ./dotfiles/.zshrc;
+      xdg.configFile."wezterm/wezterm.lua".source = ../dotfiles/wezterm.lua;
+      home.file.".zshrc".source = ../dotfiles/.zshrc;
     };
   };
 }
