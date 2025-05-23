@@ -20,6 +20,7 @@ in {
       starship
       btop
       fastfetch
+      zsh-autosuggestions
     ];
 
     home-manager.users.${userName} = {
