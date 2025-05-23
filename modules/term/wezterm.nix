@@ -17,6 +17,7 @@ in {
       zoxide
       wezterm
       lazygit
+      starship
     ];
 
     home-manager.users.${userName} = {
