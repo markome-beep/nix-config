@@ -18,9 +18,6 @@ in {
       };
       uwsm.enable = true;
       hyprlock.enable = true;
-      # regreet = {
-      #   enable = true;
-      # };
     };
 
     services = {
