@@ -18,6 +18,8 @@ in {
       wezterm
       lazygit
       starship
+      btop
+      fastfetch
     ];
 
     home-manager.users.${userName} = {
