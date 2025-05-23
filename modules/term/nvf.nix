@@ -88,7 +88,7 @@
           formatOnSave = true;
           enable = true;
           mappings = {
-            renameSymbole = "<leader>rn";
+            renameSymbol = "<leader>rn";
             codeAction = "<leader>ca";
           };
         };
