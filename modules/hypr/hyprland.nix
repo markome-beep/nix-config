@@ -28,7 +28,7 @@ in {
         settings = {
           default_session = {
             user = userName;
-            command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+            command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time";
           };
         };
       };
@@ -39,6 +39,7 @@ in {
       systemPackages = with pkgs; [
         waybar
         brightnessctl
+        mako
         libnotify
         pavucontrol
         hyprpicker
@@ -153,7 +154,7 @@ in {
 
           # Change transparency of focused and unfocused windows
           active_opacity = 1.0;
-          inactive_opacity = 0.5;
+          inactive_opacity = 0.75;
 
           shadow = {
             enabled = true;
