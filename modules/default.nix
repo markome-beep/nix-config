@@ -4,9 +4,9 @@
   ...
 }: {
   imports = [
-    ./nvf.nix
-    ./hyprland.nix
+    ./term/nvf.nix
+    ./term/wezterm.nix
+    ./hypr/hyprland.nix
     ./main-user.nix
-    ./wezterm.nix
   ];
 }

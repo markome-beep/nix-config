@@ -2,7 +2,6 @@
   environment.systemPackages = with pkgs; [
     alejandra
     ripgrep
-    zoxide
     fzf
   ];
 
@@ -83,31 +82,23 @@
             action = "vim.diagnostic.open_float";
             lua = true;
           }
-
-          {
-            key = "<leader>/";
-            mode = "n";
-            silent = true;
-            action = ''
-              function()
-                builtin.live_grep({
-                  grep_open_files = true,
-                  prompt_title = "Live Grep in Open Files",
-                })
-              end'';
-            lua = true;
-          }
         ];
 
         lsp = {
           formatOnSave = true;
           enable = true;
+          mappings = {
+            renameSymbole = "<leader>rn";
+            codeAction = "<leader>ca";
+          };
         };
+
         languages = {
           enableTreesitter = true;
           enableFormat = true;
 
           nix.enable = true;
+          go.enable = true;
           ts.enable = true;
           rust.enable = true;
           lua.enable = true;
