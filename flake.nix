@@ -34,7 +34,7 @@
         modules = [
           ./hosts/dev-one/configuration.nix
           ./modules
-          home-manager.nixosModules.default
+          # home-manager.nixosModules.default
           inputs.nvf.nixosModules.default
         ];
       };
