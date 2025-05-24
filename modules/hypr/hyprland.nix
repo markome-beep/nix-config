@@ -40,7 +40,7 @@ in {
         blueman
 
         grim
-        slupr
+        slurp
         wl-copy
       ];
     };
@@ -62,7 +62,7 @@ in {
         "$browser" = "microsoft-edge --ozone-platform=wayland '$@'";
         "$fileManager" = "nautilis";
         "$menu" = "wofi --show drun";
-        "$screenshot" = "grim -l 0 -g \"$(slurp) - | wl-copy\"";
+        "$screenshot" = "grim -l 0 -g \"$(slurp)\" - | wl-copy";
 
         exec-once = [
           "$terminal"
