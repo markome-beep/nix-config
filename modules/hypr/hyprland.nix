@@ -61,7 +61,7 @@ in {
         "$terminal" = "wezterm";
         "$browser" = "microsoft-edge --ozone-platform=wayland '$@'";
         "$fileManager" = "nautilis";
-        "$menu" = "wofi --show drun";
+        "$menu" = "pgrep wofi >/dev/null 2>&1 && killall wofi || wofi --show drun";
 
         exec-once = [
           "$terminal"
