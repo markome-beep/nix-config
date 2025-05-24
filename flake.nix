@@ -13,8 +13,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
   };
 
   outputs = {
@@ -34,7 +32,6 @@
         modules = [
           ./hosts/dev-one/configuration.nix
           ./modules
-          # home-manager.nixosModules.default
           inputs.nvf.nixosModules.default
         ];
       };

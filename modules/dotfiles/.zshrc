@@ -1,4 +1,4 @@
 eval "$(zoxide init zsh --cmd cd)"
 eval "$(starship init zsh)"
-$EDITOR=nvim
+EDITOR=nvim
 alias c=clear
