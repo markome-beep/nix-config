@@ -61,12 +61,11 @@ in {
         "$browser" = "microsoft-edge --ozone-platform=wayland '$@'";
         "$fileManager" = "nautilis";
         "$menu" = "wofi --show drun";
-        "$screenshot" = "hyprshot -m region";
 
         exec-once = [
           "$terminal"
           "$browser"
-          "nm-applet & blueman-applet"
+          "nm-applet & blueman-applet & swaync"
         ];
 
         input = {
@@ -86,7 +85,10 @@ in {
             "$mod, f, exec, $fileManager"
             "$mod, b, exec, $browser"
             "$mod, d, exec, discord"
-            "$mod SHIFT, s, exec, $screenshot"
+
+            "$mod SHIFT, s, exec, hyprshot -m region"
+            "$mod, s, exec, hyprshot -m window"
+            ", PRINT, exec, hyprshot -m output"
 
             # Movement
             "$mod, l, movefocus, r"
