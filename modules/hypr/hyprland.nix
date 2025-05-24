@@ -9,6 +9,7 @@ in {
   imports = [
     home-manager.nixosModules.default
     ./login.nix
+    ./waybar.nix
   ];
 
   config = {
@@ -17,7 +18,6 @@ in {
         enable = true;
         xwayland.enable = true;
       };
-      waybar.enable = true;
       hyprlock.enable = true;
     };
 
