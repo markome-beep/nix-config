@@ -8,113 +8,112 @@
   programs.nvf = {
     enable = true;
 
-    settings = {
-      vim = {
-        undoFile.enable = true;
+    settings.vim = {
+      undoFile.enable = true;
+      clipboard.enable = true;
 
-        theme = {
-          enable = true;
-          name = "tokyonight";
-          style = "night";
+      theme = {
+        enable = true;
+        name = "tokyonight";
+        style = "night";
+      };
+
+      options = {
+        wrap = false;
+      };
+
+      statusline.lualine.enable = true;
+
+      telescope = {
+        enable = true;
+        mappings = {
+          buffers = "<leader><leader>";
         };
+      };
 
-        options = {
-          wrap = false;
+      autocomplete.blink-cmp = {
+        enable = true;
+        mappings = {
+          confirm = "<C-y>";
+          next = "<C-n>";
+          previous = "<C-p>";
         };
+      };
 
-        statusline.lualine.enable = true;
+      formatter = {
+        conform-nvim.enable = true;
+      };
 
-        telescope = {
+      utility = {
+        sleuth.enable = true;
+        oil-nvim = {
           enable = true;
-          mappings = {
-            buffers = "<leader><leader>";
+          setupOpts = {
+            view_options.show_hidden = true;
           };
         };
+      };
 
-        autocomplete.blink-cmp = {
-          enable = true;
-          mappings = {
-            confirm = "<C-y>";
-            next = "<C-n>";
-            previous = "<C-p>";
-          };
+      mini = {
+        icons.enable = true;
+        surround.enable = true;
+      };
+
+      keymaps = [
+        {
+          key = "J";
+          mode = "v";
+          silent = true;
+          action = ":m '>+1<CR>gv=gv";
+        }
+
+        {
+          key = "K";
+          mode = "v";
+          silent = true;
+          action = ":m '<-2<CR>gv=gv";
+        }
+
+        {
+          key = "<leader>fe";
+          mode = "n";
+          silent = true;
+          action = "<CMD>Oil<CR>";
+        }
+
+        {
+          key = "<leader>e";
+          mode = "n";
+          silent = true;
+          action = "vim.diagnostic.open_float";
+          lua = true;
+        }
+      ];
+
+      lsp = {
+        formatOnSave = true;
+        enable = true;
+        mappings = {
+          renameSymbol = "<leader>rn";
+          codeAction = "<leader>ca";
         };
+      };
 
-        formatter = {
-          conform-nvim.enable = true;
-        };
+      languages = {
+        enableTreesitter = true;
+        enableFormat = true;
 
-        utility = {
-          sleuth.enable = true;
-          oil-nvim = {
-            enable = true;
-            setupOpts = {
-              view_options.show_hidden = true;
-            };
-          };
-        };
+        nix.enable = true;
 
-        mini = {
-          icons.enable = true;
-          surround.enable = true;
-        };
+        css.enable = true;
+        html.enable = true;
+        ts.enable = true;
+        svelte.enable = true;
+        tailwind.enable = true;
 
-        keymaps = [
-          {
-            key = "J";
-            mode = "v";
-            silent = true;
-            action = ":m '>+1<CR>gv=gv";
-          }
-
-          {
-            key = "K";
-            mode = "v";
-            silent = true;
-            action = ":m '<-2<CR>gv=gv";
-          }
-
-          {
-            key = "<leader>fe";
-            mode = "n";
-            silent = true;
-            action = "<CMD>Oil<CR>";
-          }
-
-          {
-            key = "<leader>e";
-            mode = "n";
-            silent = true;
-            action = "vim.diagnostic.open_float";
-            lua = true;
-          }
-        ];
-
-        lsp = {
-          formatOnSave = true;
-          enable = true;
-          mappings = {
-            renameSymbol = "<leader>rn";
-            codeAction = "<leader>ca";
-          };
-        };
-
-        languages = {
-          enableTreesitter = true;
-          enableFormat = true;
-
-          nix.enable = true;
-
-          css.enable = true;
-          html.enable = true;
-          ts.enable = true;
-          svelte.enable = true;
-          tailwind.enable = true;
-
-          go.enable = true;
-          rust.enable = true;
-          lua.enable = true;
-        };
+        go.enable = true;
+        rust.enable = true;
+        lua.enable = true;
       };
     };
   };
