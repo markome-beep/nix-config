@@ -32,6 +32,7 @@ in {
         libnotify
 
         hyprpaper
+        hyprshot
 
         pipewire
         wireplumber
@@ -39,8 +40,6 @@ in {
         networkmanagerapplet
         blueman
 
-        grim
-        slurp
         wl-clipboard-rs
       ];
     };
@@ -62,7 +61,7 @@ in {
         "$browser" = "microsoft-edge --ozone-platform=wayland '$@'";
         "$fileManager" = "nautilis";
         "$menu" = "wofi --show drun";
-        "$screenshot" = "grim -l 0 -g \"$(slurp)\" - | wl-copy";
+        "$screenshot" = "hyprshot";
 
         exec-once = [
           "$terminal"
