@@ -39,6 +39,7 @@ in {
 
         networkmanagerapplet
         blueman
+        yazi
 
         wl-clipboard-rs
       ];
