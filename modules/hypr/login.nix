@@ -13,7 +13,7 @@ in {
       settings = {
         default_session = {
           user = userName;
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time";
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
         };
       };
     };

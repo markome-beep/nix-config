@@ -41,7 +41,7 @@ in {
 
         grim
         slurp
-        wl-copy
+        wl-clipboard-rs
       ];
     };
 
@@ -87,8 +87,7 @@ in {
             "$mod, f, exec, $fileManager"
             "$mod, b, exec, $browser"
             "$mod, d, exec, discord"
-            ", $mod, exec, $menu"
-            "$mod SHIFT, s, exec, $menu"
+            "$mod SHIFT, s, exec, $screenshot"
 
             # Movement
             "$mod, l, movefocus, r"
@@ -122,6 +121,10 @@ in {
           ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
           ",XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+"
           ",XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-"
+        ];
+
+        bindr = [
+          "SUPER, SUPER_L, exec, $menu"
         ];
 
         general = {
