@@ -10,7 +10,6 @@
 
     settings.vim = {
       undoFile.enable = true;
-      clipboard.enable = true;
 
       theme = {
         enable = true;
@@ -20,6 +19,8 @@
 
       options = {
         wrap = false;
+        clipboard = "unamedplus";
+        scrolloff = 8;
       };
 
       statusline.lualine.enable = true;
