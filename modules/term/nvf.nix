@@ -19,8 +19,8 @@
 
       options = {
         wrap = false;
-        clipboard = "unamedplus";
-        scrolloff = 8;
+        # clipboard = "unamedplus";
+        # scrolloff = 8;
       };
 
       statusline.lualine.enable = true;
