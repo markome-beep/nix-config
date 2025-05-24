@@ -28,7 +28,7 @@ in {
         pavucontrol
         wofi
 
-        mako
+        swaynotificationcenter
         libnotify
 
         hyprpaper
@@ -61,7 +61,7 @@ in {
         "$browser" = "microsoft-edge --ozone-platform=wayland '$@'";
         "$fileManager" = "nautilis";
         "$menu" = "wofi --show drun";
-        "$screenshot" = "hyprshot";
+        "$screenshot" = "hyprshot -m region";
 
         exec-once = [
           "$terminal"
