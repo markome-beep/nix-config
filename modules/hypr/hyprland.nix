@@ -17,20 +17,22 @@ in {
         enable = true;
         withUWSM = true;
       };
-      uwsm.enable = true;
+      waybar.enable = true;
       hyprlock.enable = true;
+
+      uwsm.enable = true;
     };
 
     environment = {
       sessionVariables.NIXOS_OZONE_WL = "1";
       systemPackages = with pkgs; [
-        waybar
         brightnessctl
         mako
         libnotify
         pavucontrol
         hyprpicker
         pipewire
+        wireplumber
         networkmanagerapplet
         blueman
       ];
@@ -58,7 +60,8 @@ in {
         exec-once = [
           "$terminal"
           "$browser"
-          "waybar & nm-applet & blueman-applet"
+          "systemctl --user enable --now waybar.service"
+          "nm-applet & blueman-applet"
         ];
 
         input = {
