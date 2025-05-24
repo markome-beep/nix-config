@@ -15,26 +15,33 @@ in {
     programs = {
       hyprland = {
         enable = true;
-        withUWSM = true;
+        xwayland.enable = true;
       };
       waybar.enable = true;
       hyprlock.enable = true;
-
-      uwsm.enable = true;
     };
 
     environment = {
       sessionVariables.NIXOS_OZONE_WL = "1";
       systemPackages = with pkgs; [
         brightnessctl
+        pavucontrol
+        wofi
+
         mako
         libnotify
-        pavucontrol
-        hyprpicker
+
+        hyprpaper
+
         pipewire
         wireplumber
+
         networkmanagerapplet
         blueman
+
+        grim
+        slupr
+        wl-copy
       ];
     };
 
@@ -47,7 +54,6 @@ in {
 
     home-manager.users.${userName}.wayland.windowManager.hyprland = {
       enable = true;
-      systemd.enable = false;
 
       settings = {
         monitor = ",prefered,auto,1";
@@ -56,11 +62,11 @@ in {
         "$browser" = "microsoft-edge --ozone-platform=wayland '$@'";
         "$fileManager" = "nautilis";
         "$menu" = "wofi --show drun";
+        "$screenshot" = "grim -l 0 -g \"$(slurp) - | wl-copy\"";
 
         exec-once = [
           "$terminal"
           "$browser"
-          "systemctl --user enable --now waybar.service"
           "nm-applet & blueman-applet"
         ];
 
@@ -81,6 +87,8 @@ in {
             "$mod, f, exec, $fileManager"
             "$mod, b, exec, $browser"
             "$mod, d, exec, discord"
+            ", $mod, exec, $menu"
+            "$mod SHIFT, s, exec, $menu"
 
             # Movement
             "$mod, l, movefocus, r"
