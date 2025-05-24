@@ -46,7 +46,12 @@
 
         utility = {
           sleuth.enable = true;
-          oil-nvim.enable = true;
+          oil-nvim = {
+            enable = true;
+            setupOpts = {
+              view_options.show_hidden = true;
+            };
+          };
         };
 
         mini = {
