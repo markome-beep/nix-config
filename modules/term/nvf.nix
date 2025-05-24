@@ -10,7 +10,8 @@
 
     settings.vim = {
       undoFile.enable = true;
-      clipboard.enable = true;
+      # clipboard.enable = true;
+      hideSearchHighlight = true;
 
       theme = {
         enable = true;
@@ -20,6 +21,7 @@
 
       options = {
         wrap = false;
+
         # clipboard = "unamedplus";
         # scrolloff = 8;
       };
