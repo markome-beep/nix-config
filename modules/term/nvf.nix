@@ -10,6 +10,7 @@
 
     settings.vim = {
       undoFile.enable = true;
+      clipboard.enable = true;
 
       theme = {
         enable = true;
