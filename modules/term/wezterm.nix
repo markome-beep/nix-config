@@ -25,7 +25,7 @@ in {
 
     programs.zsh = {
       enable = true;
-      enableAutosuggestions = true;
+      autosuggestions.enable = true;
     };
 
     home-manager.users.${userName} = {
