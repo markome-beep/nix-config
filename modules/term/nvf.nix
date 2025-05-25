@@ -92,6 +92,13 @@
           action = "vim.diagnostic.open_float";
           lua = true;
         }
+
+        {
+          key = "<leader>y";
+          mode = "nv";
+          silent = true;
+          action = "+y";
+        }
       ];
 
       lsp = {
