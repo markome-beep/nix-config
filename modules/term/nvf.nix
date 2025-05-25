@@ -67,35 +67,31 @@
         {
           key = "J";
           mode = "v";
-          silent = true;
           action = ":m '>+1<CR>gv=gv";
         }
 
         {
           key = "K";
           mode = "v";
-          silent = true;
           action = ":m '<-2<CR>gv=gv";
         }
 
         {
           key = "<leader>fe";
           mode = "n";
-          silent = true;
           action = "<CMD>Oil<CR>";
         }
 
         {
           key = "<leader>e";
           mode = "n";
-          silent = true;
           action = "vim.diagnostic.open_float";
           lua = true;
         }
 
         {
           key = "<leader>y";
-          mode = "nv";
+          mode = ["n" "v"];
           silent = true;
           action = "+y";
         }
