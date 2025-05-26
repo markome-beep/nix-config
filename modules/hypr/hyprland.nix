@@ -1,5 +1,5 @@
 {
-  home-manager,
+  # home-manager,
   pkgs,
   config,
   ...

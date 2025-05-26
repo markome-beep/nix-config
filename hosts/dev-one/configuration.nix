@@ -8,7 +8,7 @@
 }: {
   imports = [
     ./hardware-configuration.nix
-    home-manager.nixosModules.default
+    # home-manager.nixosModules.default
   ];
 
   # Custom Settings ---------------------------------------------
