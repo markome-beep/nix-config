@@ -33,6 +33,7 @@
           ./hosts/dev-one/configuration.nix
           ./modules
           inputs.nvf.nixosModules.default
+          home-manager.nixosModules.default
         ];
       };
     };

@@ -1,13 +1,11 @@
 {
   pkgs,
-  # home-manager,
   config,
   ...
 }: let
   userName = config.main-user.userName;
 in {
   imports = [
-    # home-manager.nixosModules.default
     ./go.nix
     ./rust.nix
   ];
