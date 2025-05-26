@@ -7,9 +7,10 @@
   userName = config.main-user.userName;
 in {
   imports = [
-    home-manager.nixosModules.default
+    # home-manager.nixosModules.default
     ./login.nix
     ./waybar.nix
+    ./hyprpaper.nix
   ];
 
   config = {
