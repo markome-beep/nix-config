@@ -64,6 +64,24 @@
         surround.enable = true;
       };
 
+      lazy.plugins = {
+        undotree = {
+          package = pkgs.vimPlugins.undotree;
+
+          cmd = ["UndotreeToggle"];
+
+          keys = [
+            {
+              mode = "n";
+              key = "<leader>u";
+              action = "vim.cmd.UndotreeToggle";
+              lua = true;
+              desc = "Toggle undotree [Undotree]";
+            }
+          ];
+        };
+      };
+
       keymaps = [
         {
           key = "J";
