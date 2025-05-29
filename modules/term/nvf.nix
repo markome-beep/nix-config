@@ -10,7 +10,7 @@
 
     settings.vim = {
       undoFile.enable = true;
-      # clipboard.enable = true;
+      clipboard.enable = true;
       hideSearchHighlight = true;
 
       theme = {
@@ -21,9 +21,7 @@
 
       options = {
         wrap = false;
-
-        # clipboard = "unamedplus";
-        # scrolloff = 8;
+        tabstop = 4;
       };
 
       statusline.lualine.enable = true;
@@ -37,6 +35,7 @@
 
       autocomplete.blink-cmp = {
         enable = true;
+        friendly-snippets.enable = true;
         mappings = {
           confirm = "<C-y>";
           next = "<C-n>";
@@ -92,7 +91,6 @@
         {
           key = "<leader>y";
           mode = ["n" "v"];
-          silent = true;
           action = "+y";
         }
       ];
