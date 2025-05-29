@@ -10,7 +10,9 @@
 
     settings.vim = {
       undoFile.enable = true;
-      clipboard.enable = true;
+      clipboard = {
+        enable = true;
+      };
       hideSearchHighlight = true;
 
       theme = {
@@ -91,7 +93,7 @@
         {
           key = "<leader>y";
           mode = ["n" "v"];
-          action = "+y";
+          action = "\"+y";
         }
       ];
 
