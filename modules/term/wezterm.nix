@@ -8,6 +8,8 @@ in {
   imports = [
     ./go.nix
     ./rust.nix
+    ./lua.nix
+    ./node.nix
   ];
 
   config = {
