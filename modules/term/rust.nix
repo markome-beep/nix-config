@@ -7,6 +7,7 @@
     gobject-introspection
     cargo
     cargo-tauri
+    wasm-pack
 
     at-spi2-atk
     atkmm
