@@ -3,6 +3,7 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   pkgs,
+  inputs,
   # home-manager,
   ...
 }: {
@@ -26,6 +27,7 @@
     microsoft-edge
     webcord
     discord
+    inputs.zen-browser.packages."${system}".default
   ];
 
   nix.gc = {

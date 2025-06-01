@@ -30,6 +30,7 @@
         specialArgs = {
           inherit home-manager;
           inherit userName;
+          inherit inputs;
         };
         modules = [
           ./hosts/dev-one/configuration.nix
