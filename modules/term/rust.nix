@@ -3,5 +3,6 @@
     rustup
     cargo
     gcc
+    cargo-tauri
   ];
 }
