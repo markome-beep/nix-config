@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs_edge.url = "github:nixos/nixpkgs/nixos-24.11";
 
     nvf = {
       url = "github:notashelf/nvf";
@@ -29,6 +30,11 @@
           inherit home-manager;
           inherit userName;
           inherit inputs;
+          pkgs_edge = import inputs.nixpkgs_edge {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+            inherit (nixpkgs) lib;
+          };
         };
         modules = [
           ./hosts/dev-one/configuration.nix
