@@ -124,6 +124,10 @@
         };
       };
 
+      treesitter.grammars = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+        typescript
+      ];
+
       languages = {
         enableTreesitter = true;
         enableFormat = true;
