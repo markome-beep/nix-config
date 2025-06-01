@@ -1,11 +1,13 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     rustup
-    cargo
     gcc
-    cargo-tauri
+
     pkg-config
     gobject-introspection
+    cargo
+    cargo-tauri
+
     at-spi2-atk
     atkmm
     cairo
