@@ -1,0 +1,24 @@
+{
+  pkgs,
+  inputs,
+  ...
+}: {
+  environment.variables = {
+    EDITOR = "vim";
+  };
+
+  environment.systemPackages = with pkgs; [
+    zoxide
+    yazi
+    lazygit
+    tmux
+
+    (inputs.nvf.lib.neovimConfiguration {
+      inherit pkgs;
+
+      modules = [
+        ./nvf-config.nix
+      ];
+    }).neovim
+  ];
+}

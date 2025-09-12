@@ -169,8 +169,9 @@
       };
     };
 
-    treesitter.grammars = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+    treesitter.grammars = with pkgs.vimPlugins.nvim-treesitter-parsers; [
       typescript # Needed for svelte
+      qmljs
     ];
 
     languages = {

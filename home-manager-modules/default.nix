@@ -1,8 +1,8 @@
 {
   imports = [
-    ./git.nix
     ./wezterm.nix
-    ./bash.nix
-    # ./zen-browser.nix
+    ./cli-apps.nix
+    ./hypr.nix
   ];
+
 }
