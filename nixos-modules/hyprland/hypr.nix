@@ -3,6 +3,7 @@
   environment.systemPackages = with pkgs; [
     hyprpaper
     hypridle
+    hyprcursor
   ];
 
   programs.hyprland.enable = true;

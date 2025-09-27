@@ -11,11 +11,13 @@
     '';
   };
 
+  programs.btop.enable = true;
+
   programs.starship = {
     enable = true;
     settings = {
       format = ''
-        ╭$battery$time$nix_shell$all
+        ╭$battery$nix_shell$git_branch $directory
         ╰$character
       '';
       line_break.disabled = true;
@@ -28,10 +30,12 @@
       cmd_duration.format = "\\[[⏱ $duration]($style)\\]";
       time = {
         format = "\\[[$time]($style)\\]";
-        disabled = false;
+        disabled = true;
       };
       git_branch.format = "\\[[$symbol$branch]($style)\\]";
       git_status.format = "([\\[$all_status$ahead_behind\\]]($style))";
+      rust.format = "\\[[$symbol($version)]($style)\\]";
+      package.format = "\\[[$symbol$version]($style)\\]";
       golang.disabled = true;
 
       # aws.format = "\\[[$symbol($profile)(\\($region\\))(\\[$duration\\])]($style)\\]";
@@ -73,7 +77,6 @@
       # opa.format = "\\[[$symbol($version)]($style)\\]";
       # openstack.format = "\\[[$symbol$cloud(\\($project\\))]($style)\\]";
       # os.format = "\\[[$symbol]($style)\\]";
-      # package.format = "\\[[$symbol$version]($style)\\]";
       # perl.format = "\\[[$symbol($version)]($style)\\]";
       # php.format = "\\[[$symbol($version)]($style)\\]";
       # pijul_channel.format = "\\[[$symbol$channel]($style)\\]";
@@ -84,7 +87,6 @@
       # raku.format = "\\[[$symbol($version-$vm_version)]($style)\\]";
       # red.format = "\\[[$symbol($version)]($style)\\]";
       # ruby.format = "\\[[$symbol($version)]($style)\\]";
-      # rust.format = "\\[[$symbol($version)]($style)\\]";
       # scala.format = "\\[[$symbol($version)]($style)\\]";
       # spack.format = "\\[[$symbol$environment]($style)\\]";
       # sudo.format = "\\[[as $symbol]($style)\\]";

@@ -7,11 +7,14 @@
     inputs.zen-browser.packages."x86_64-linux".default
     obs-studio
     vlc
-    discord
     steam
+    discord
+    plex-desktop
+    google-chrome
   ];
 
   xdg.mime.defaultApplications = {
     "media/mkv" = [ "vlc.desktop" ];
   };
+  programs.steam.enable = true;
 }

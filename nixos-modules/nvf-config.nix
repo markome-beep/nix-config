@@ -54,10 +54,10 @@
       };
     };
 
-    assistant.copilot = {
-      enable = true;
-      cmp.enable = true;
-    };
+    # assistant.copilot = {
+    #   enable = true;
+    #   cmp.enable = true;
+    # };
 
     utility = {
       sleuth.enable = true;
@@ -169,10 +169,17 @@
       };
     };
 
-    treesitter.grammars = with pkgs.vimPlugins.nvim-treesitter-parsers; [
-      typescript # Needed for svelte
-      qmljs
-    ];
+    treesitter = {
+      # enable = true;
+      # fold = true;
+      # autotagHtml = true;
+      # indent.enable = true;
+
+      grammars = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+        typescript # Needed for svelte
+        qmljs
+      ];
+    };
 
     languages = {
       # General Settings
