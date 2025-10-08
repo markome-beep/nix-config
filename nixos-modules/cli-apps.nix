@@ -4,7 +4,7 @@
   ...
 }: {
   environment.variables = {
-    EDITOR = "vim";
+    EDITOR = "nvim";
   };
 
   environment.systemPackages = with pkgs; [
