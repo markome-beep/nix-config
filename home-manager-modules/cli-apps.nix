@@ -4,10 +4,6 @@
 
     initExtra = ''
       eval "$(starship init bash)"
-      
-      # if [[ $- =~ i ]] && [[ -z "$TMUX" ]]; then
-      #         tmux new-session
-      # fi
     '';
   };
 
@@ -120,10 +116,9 @@
 
   programs.git = {
     enable = true;
-    userName = "markome-beep";
-    userEmail = "pirro.marko1@gmail.com";
-
-    extraConfig = {
+    settings = {
+      user.name = "markome-beep";
+      user.email = "pirro.marko1@gmail.com";
       init.defaultBranch = "main";
     };
   };

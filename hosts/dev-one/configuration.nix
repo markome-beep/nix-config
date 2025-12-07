@@ -14,6 +14,7 @@
 
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
+    backupFileExtension = "backup";
     users = {
       "markome" = import ./home.nix;
     };
