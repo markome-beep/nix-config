@@ -2,6 +2,7 @@
   services.hyprpaper.enable = true;
   services.hypridle.enable = true;
   programs.rofi.enable = true;
+  services.swaync.enable = true;
   # home.pointerCursor = {
   #   hyprcursor.enable = true;
   #

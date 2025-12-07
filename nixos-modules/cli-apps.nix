@@ -12,6 +12,7 @@
     yazi
     lazygit
     tmux
+    unzip
 
     (inputs.nvf.lib.neovimConfiguration {
       inherit pkgs;

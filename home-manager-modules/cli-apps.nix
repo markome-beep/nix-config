@@ -4,10 +4,10 @@
 
     initExtra = ''
       eval "$(starship init bash)"
-
-      if [[ $- =~ i ]] && [[ -z "$TMUX" ]]; then
-              tmux new-session
-      fi
+      
+      # if [[ $- =~ i ]] && [[ -z "$TMUX" ]]; then
+      #         tmux new-session
+      # fi
     '';
   };
 

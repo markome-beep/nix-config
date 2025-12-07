@@ -4,7 +4,7 @@
     hyprpaper
     hypridle
     hyprcursor
-    quickshell
+    hyprpolkitagent
   ];
 
   programs.hyprland.enable = true;

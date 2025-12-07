@@ -25,6 +25,9 @@
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
+
   time.timeZone = "America/Chicago";
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -39,14 +42,14 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-services.xserver = {
-  enable = true;
-  xkb = {
-    layout = "us";
-    variant = "";
-    options = "caps:swapescape";
+  services.xserver = {
+    enable = true;
+    xkb = {
+      layout = "us";
+      variant = "";
+      options = "caps:swapescape";
+    };
   };
-};
 
   users.users.markome = {
     isNormalUser = true;

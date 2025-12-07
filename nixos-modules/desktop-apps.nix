@@ -11,6 +11,8 @@
     discord
     plex-desktop
     google-chrome
+    nautilus
+    rpi-imager
   ];
 
   xdg.mime.defaultApplications = {
