@@ -25,6 +25,20 @@
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
+  services.openssh = {
+    enable = true;
+  };
+
+  # services.create_ap = {
+  #   enable = true;
+  #   settings = {
+  #     INTERNET_IFACE = "enp3s0f3u2c2";
+  #     PASSPHRASE = "12345678";
+  #     SSID = "TEST";
+  #     WIFI_IFACE = "wlo1";
+  #     SHARE_METHOD="bridge";
+  #   };
+  # };
 
   services.udisks2.enable = true;
   services.gvfs.enable = true;

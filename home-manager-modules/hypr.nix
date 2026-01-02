@@ -1,5 +1,18 @@
 {pkgs, ...}: {
-  services.hyprpaper.enable = true;
+
+  xdg.configFile."hypr/background".source = ../assests/nix-dark.png;
+  services.hyprpaper = {
+    enable = true;
+
+    settings = {
+      preload = ["~/.config/hypr/background"];
+
+      wallpaper = [
+        ",~/.config/hypr/background"
+      ];
+    };
+  };
+
   services.hypridle.enable = true;
   programs.rofi.enable = true;
   services.swaync.enable = true;

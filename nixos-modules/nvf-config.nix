@@ -178,6 +178,7 @@
       grammars = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
         typescript # Needed for svelte
         qmljs
+        templ
       ];
     };
 
