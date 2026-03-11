@@ -1,5 +1,4 @@
-{pkgs, ...}:
-let
+{pkgs, ...}: let
   # 1. Create a custom package to download the cursor
   breezex-cursor = pkgs.stdenv.mkDerivation {
     pname = "breezex-cursor";
@@ -7,8 +6,8 @@ let
 
     src = pkgs.fetchzip {
       url = "https://github.com/ful1e5/BreezeX_Cursor/releases/download/v2.0.1/BreezeX-Dark.tar.xz";
-      
-      # NOTE: On your first build, Nix will complain about a hash mismatch. 
+
+      # NOTE: On your first build, Nix will complain about a hash mismatch.
       # Copy the correct "got: sha256-..." hash from the error message and replace this line!
       hash = "sha256-HqjO/ogAd/dsrO5WHIilUQaq1CbiU48lEaoefcUmmBM=";
     };
@@ -19,17 +18,19 @@ let
       cp -r * $out/share/icons/BreezeX-Dark/
     '';
   };
-in
-{
+in {
   xdg.configFile."hypr/background".source = ../assests/nix-dark.png;
   services.hyprpaper = {
     enable = true;
 
     settings = {
       preload = ["~/.config/hypr/background"];
-
+      splash = false;
       wallpaper = [
-        ",~/.config/hypr/background"
+        {
+          monitor = "";
+          path = "~/.config/hypr/background";
+        }
       ];
     };
   };
@@ -43,7 +44,7 @@ in
     x11.enable = true;
     name = "BreezeX-Dark"; # The name of the cursor theme
     package = breezex-cursor; # The package providing the theme
-    size = 32;
+    size = 48;
   };
 
   # Make sure GTK is enabled globally in Home Manager so the cursor applies to GTK apps

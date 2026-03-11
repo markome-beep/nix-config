@@ -68,29 +68,13 @@
           view_options.show_hidden = true;
         };
       };
+
+      undotree.enable = true;
     };
 
     mini = {
       icons.enable = true;
       surround.enable = true;
-    };
-
-    lazy.plugins = {
-      undotree = {
-        package = pkgs.vimPlugins.undotree;
-
-        cmd = ["UndotreeToggle"];
-
-        keys = [
-          {
-            mode = "n";
-            key = "<leader>u";
-            action = "vim.cmd.UndotreeToggle";
-            lua = true;
-            desc = "Toggle undotree [Undotree]";
-          }
-        ];
-      };
     };
 
     keymaps = [
@@ -131,9 +115,14 @@
       }
 
       {
-        key = "<leader>y";
         mode = ["n" "v"];
+        key = "<leader>y";
         action = "\"+y";
+      }
+      {
+        mode = ["n" "v"];
+        key = "<leader>u";
+        action = "<CMD>UndotreeToggle<CR>";
       }
     ];
 
@@ -170,14 +159,12 @@
     };
 
     treesitter = {
-      # enable = true;
-      # fold = true;
-      # autotagHtml = true;
-      # indent.enable = true;
+      enable = true;
+      fold = true;
+      autotagHtml = true;
+      indent.enable = true;
 
       grammars = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
-        typescript # Needed for svelte
-        qmljs
         templ
       ];
     };
@@ -196,8 +183,9 @@
       ts.enable = true;
       svelte.enable = true;
       tailwind.enable = true;
-
+      
       # Other Languages
+      qml.enable = true;
       go.enable = true;
       rust.enable = true;
       lua.enable = true;
