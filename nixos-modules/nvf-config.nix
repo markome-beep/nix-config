@@ -2,7 +2,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   config.vim = {
     undoFile.enable = true;
     hideSearchHighlight = true;
@@ -115,12 +116,18 @@
       }
 
       {
-        mode = ["n" "v"];
+        mode = [
+          "n"
+          "v"
+        ];
         key = "<leader>y";
         action = "\"+y";
       }
       {
-        mode = ["n" "v"];
+        mode = [
+          "n"
+          "v"
+        ];
         key = "<leader>u";
         action = "<CMD>UndotreeToggle<CR>";
       }
@@ -135,7 +142,7 @@
 
     autocmds = [
       {
-        event = ["TextYankPost"];
+        event = [ "TextYankPost" ];
         desc = "Highlight on yank";
 
         callback = lib.generators.mkLuaInline ''
@@ -144,7 +151,7 @@
           end
         '';
 
-        pattern = ["*"];
+        pattern = [ "*" ];
         group = "YankHighlight";
       }
     ];
@@ -183,7 +190,7 @@
       ts.enable = true;
       svelte.enable = true;
       tailwind.enable = true;
-      
+
       # Other Languages
       qml.enable = true;
       go.enable = true;

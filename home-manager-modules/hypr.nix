@@ -5,17 +5,17 @@
     version = "2.0.1"; # Latest version on their GitHub
 
     src = pkgs.fetchzip {
-      url = "https://github.com/ful1e5/BreezeX_Cursor/releases/download/v2.0.1/BreezeX-Dark.tar.xz";
+      url = "https://github.com/ful1e5/BreezeX_Cursor/releases/download/v2.0.1/BreezeX-Black.tar.xz";
 
       # NOTE: On your first build, Nix will complain about a hash mismatch.
       # Copy the correct "got: sha256-..." hash from the error message and replace this line!
-      hash = "sha256-HqjO/ogAd/dsrO5WHIilUQaq1CbiU48lEaoefcUmmBM=";
+      hash = "sha256-uRmCyFVpVN+47r9HXErxZQjheGdLPcGJTwc+mDvF9Os=";
     };
 
     installPhase = ''
       # The theme folder needs to match exactly what you set in home.pointerCursor.name
-      mkdir -p $out/share/icons/BreezeX-Dark
-      cp -r * $out/share/icons/BreezeX-Dark/
+      mkdir -p $out/share/icons/BreezeX-Black
+      cp -r * $out/share/icons/BreezeX-Black/
     '';
   };
 in {
@@ -42,7 +42,7 @@ in {
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
-    name = "BreezeX-Dark"; # The name of the cursor theme
+    name = "BreezeX-Black"; # The name of the cursor theme
     package = breezex-cursor; # The package providing the theme
     size = 48;
   };
