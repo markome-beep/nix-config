@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, inputs, ...}: {
   hardware.bluetooth.enable = true;
 
   services.blueman.enable = true;
@@ -8,11 +8,7 @@
     pavucontrol
     wl-clipboard
     wl-clip-persist
-    quickshell
     hyprshot
-    # slurp
-    # grim
-    # libnotify
-    # jq
+    inputs.quickshell.packages.${pkgs.system}.default
   ];
 }

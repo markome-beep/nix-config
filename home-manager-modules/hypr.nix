@@ -1,4 +1,5 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   # 1. Create a custom package to download the cursor
   breezex-cursor = pkgs.stdenv.mkDerivation {
     pname = "breezex-cursor";
@@ -18,13 +19,14 @@
       cp -r * $out/share/icons/BreezeX-Black/
     '';
   };
-in {
+in
+{
   xdg.configFile."hypr/background".source = ../assests/nix-dark.png;
   services.hyprpaper = {
     enable = true;
 
     settings = {
-      preload = ["~/.config/hypr/background"];
+      preload = [ "~/.config/hypr/background" ];
       splash = false;
       wallpaper = [
         {

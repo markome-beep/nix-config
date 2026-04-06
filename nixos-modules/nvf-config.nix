@@ -59,6 +59,8 @@
     #   enable = true;
     #   cmp.enable = true;
     # };
+    
+    vim.assistant.supermaven-nvim.enable = true;
 
     utility = {
       sleuth.enable = true;
