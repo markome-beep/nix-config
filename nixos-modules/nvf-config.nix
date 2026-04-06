@@ -60,7 +60,7 @@
     #   cmp.enable = true;
     # };
     
-    vim.assistant.supermaven-nvim.enable = true;
+    assistant.supermaven-nvim.enable = true;
 
     utility = {
       sleuth.enable = true;
@@ -169,7 +169,7 @@
 
     treesitter = {
       enable = true;
-      fold = true;
+      # fold = true;
       autotagHtml = true;
       indent.enable = true;
 
