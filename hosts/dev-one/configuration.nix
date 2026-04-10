@@ -1,16 +1,23 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{inputs, ...}: {
+{inputs, config, ...}: {
   imports = [
     ./hardware-configuration.nix
     ../../nixos-modules
   ];
 
-  nix.settings.experimental-features = [
-    "flakes"
-    "nix-command"
-  ];
+  age.secrets.github-token.file = ../../secrets/github-token.age;
+  age.identityPaths = [ "/home/markome/.ssh/id_ed25519" ];
+
+  nix.settings = {
+    access-tokens = config.age.secrets.github-token.path;
+    extra-platforms = ["aarch64-linux"];
+    experimental-features = [
+      "flakes"
+      "nix-command"
+    ];
+  };
 
   home-manager = {
     extraSpecialArgs = {inherit inputs;};

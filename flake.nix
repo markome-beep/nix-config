@@ -12,8 +12,6 @@
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {
-        # IMPORTANT: we're using "libgbm" and is only available in unstable so ensure
-        # to have it up-to-date or simply don't specify the nixpkgs input
         nixpkgs.follows = "nixpkgs";
         home-manager.follows = "home-manager";
       };
@@ -21,7 +19,6 @@
 
     nvf = {
       url = "github:notashelf/nvf";
-      # nixpkgs.url = "github:NixOS/nixpkgs/cad22e7d996aea55ecab064e84834289143e44a0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -31,11 +28,12 @@
     };
 
     quickshell = {
-      # add ?ref=<tag> to track a tag
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-      # THIS IS IMPORTANT
-      # Mismatched system dependencies will lead to crashes and other issues.
+    agenix = {
+      url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -54,6 +52,7 @@
           ./hosts/dev-one/configuration.nix
           inputs.home-manager.nixosModules.default
           inputs.stylix.nixosModules.stylix
+          inputs.agenix.nixosModules.default
         ];
       };
     };

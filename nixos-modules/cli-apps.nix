@@ -10,6 +10,7 @@
   environment.systemPackages = with pkgs; [
     zoxide
     yazi
+    tree
     lazygit
     tmux
     unzip
