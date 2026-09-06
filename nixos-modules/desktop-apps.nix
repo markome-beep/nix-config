@@ -12,8 +12,11 @@
     google-chrome
     nautilus
     blender
+    rpi-imager
 
     droidcam
+    libation
+    localsend
   ];
 
   xdg.mime.defaultApplications = {

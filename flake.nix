@@ -36,6 +36,13 @@
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
+      inputs.nixpkgs.follows = "nixpkgs"; # this line is optional, prevents downloading two versions of nixpkgs but disables cache
+    };
+
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
 
   outputs =
@@ -53,6 +60,7 @@
           inputs.home-manager.nixosModules.default
           inputs.stylix.nixosModules.stylix
           inputs.agenix.nixosModules.default
+          inputs.nix-flatpak.nixosModules.nix-flatpak
         ];
       };
     };

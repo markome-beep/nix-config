@@ -1,7 +1,8 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{inputs, config, ...}: {
+{ inputs, config, ... }:
+{
   imports = [
     ./hardware-configuration.nix
     ../../nixos-modules
@@ -12,7 +13,7 @@
 
   nix.settings = {
     access-tokens = config.age.secrets.github-token.path;
-    extra-platforms = ["aarch64-linux"];
+    extra-platforms = [ "aarch64-linux" ];
     experimental-features = [
       "flakes"
       "nix-command"
@@ -20,7 +21,7 @@
   };
 
   home-manager = {
-    extraSpecialArgs = {inherit inputs;};
+    extraSpecialArgs = { inherit inputs; };
     backupFileExtension = "backup";
     users = {
       "markome" = import ./home.nix;
@@ -76,7 +77,16 @@
   users.users.markome = {
     isNormalUser = true;
     description = "Pirro Marko";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "dialout"
+      "docker"
+    ];
+  };
+
+  virtualisation.docker = {
+    enable = true;
   };
 
   nixpkgs.config.allowUnfree = true;

@@ -14,6 +14,7 @@
     lazygit
     tmux
     unzip
+    ripgrep
 
     (inputs.nvf.lib.neovimConfiguration {
       inherit pkgs;
