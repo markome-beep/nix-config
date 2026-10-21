@@ -10,6 +10,7 @@
       self.nixosModules.hyprlock
       self.nixosModules.hyprpaper
       self.nixosModules.greetd
+      self.nixosModules.keyring
       self.nixosModules.rofi
       self.nixosModules.swaync
       self.nixosModules.cursor
