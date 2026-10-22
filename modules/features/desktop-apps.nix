@@ -4,7 +4,6 @@
     {
       environment.systemPackages = with pkgs; [
         vlc
-        steam
         discord
         plex-desktop
         google-chrome

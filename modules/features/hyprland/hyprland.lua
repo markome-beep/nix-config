@@ -37,9 +37,6 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hypridle")
     hl.exec_cmd("hyprpaper")
     hl.exec_cmd("systemctl --user start hyprpolkitagent")
-
-    -- hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 24")
-    hl.exec_cmd("hyprctl setcursor BreezeX-Black 32")
 end)
 
 
@@ -49,10 +46,7 @@ end)
 
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
 
--- hl.env("XCURSOR_SIZE", "32")
--- hl.env("HYPRCURSOR_SIZE", "32")
--- hl.env("XCURSOR_THEME", "Bibata-Modern-Ice")
-hl.env("XCURSOR_THEME", "BreezeX-Black")
+-- Cursor theme and size come from XCURSOR_THEME/XCURSOR_SIZE, set in cursor.nix
 
 
 -----------------------

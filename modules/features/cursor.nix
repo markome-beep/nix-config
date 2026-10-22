@@ -2,24 +2,42 @@
 {
   flake.nixosModules.cursor =
     { pkgs, lib, ... }:
+    let
+      cursor = self.packages.${pkgs.stdenv.hostPlatform.system}.breezex-cursor;
+      # Single source of truth: Hyprland, XWayland, GTK and Steam all read these
+      theme = "BreezeX-Black";
+      size = 40;
+    in
     {
-      environment.systemPackages = [
-        self.packages.${pkgs.stdenv.hostPlatform.system}.breezex-cursor
-      ];
+      environment.systemPackages = [ cursor ];
 
       environment.sessionVariables = {
-        XCURSOR_THEME = "BreezeX-Black";
-        XCURSOR_SIZE = "48";
+        XCURSOR_THEME = theme;
+        XCURSOR_SIZE = toString size;
       };
 
       # GTK apps read the cursor from dconf rather than the environment
       programs.dconf.profiles.user.databases = [
         {
           settings."org/gnome/desktop/interface" = {
-            cursor-theme = "BreezeX-Black";
-            cursor-size = lib.gvariant.mkInt32 48;
+            cursor-theme = theme;
+            cursor-size = lib.gvariant.mkInt32 size;
           };
         }
+      ];
+
+      # icons/default/index.theme, for X apps that ignore XCURSOR_THEME
+      xdg.icons.fallbackCursorThemes = [ theme ];
+
+      # Steam's UI runs in a container that can't see /run/current-system, only
+      # its own FHS /usr/share/icons, so the theme has to be in there too. Its CEF
+      # ignores XCURSOR_THEME and only loads the "default" theme, so that goes too
+      programs.steam.extraPackages = [
+        cursor
+        (pkgs.writeTextDir "share/icons/default/index.theme" ''
+          [Icon Theme]
+          Inherits=${theme}
+        '')
       ];
     };
 
