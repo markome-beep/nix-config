@@ -30,6 +30,10 @@
       self.nixosModules.desktop-apps
       self.nixosModules.flatpak
       self.nixosModules.blip
+      self.nixosModules.fin-dash
+      self.nixosModules.guacamole
+      self.nixosModules.tailscale
+      self.nixosModules.funnel-toggle
     ];
 
     age.secrets.github-token.file = ../../../secrets/github-token.age;

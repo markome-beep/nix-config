@@ -44,6 +44,16 @@
       url = "github:blip-net/nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    fin-dash = {
+      url = "git+file:///home/markome/projects/fin-dash";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    funnel-toggle = {
+      url = "git+file:///home/markome/projects/funnel-toggle";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);

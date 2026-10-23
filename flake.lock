@@ -108,6 +108,26 @@
         "type": "github"
       }
     },
+    "fin-dash": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1792636798,
+        "narHash": "sha256-i0AkXUzBaLLYabjWtiQ/F7lLKDlAh3pQNsTeVgB879Y=",
+        "ref": "refs/heads/main",
+        "rev": "cad9286aa1b788934e8d1abdc1e206fceb894dd5",
+        "revCount": 2,
+        "type": "git",
+        "url": "file:///home/markome/projects/fin-dash"
+      },
+      "original": {
+        "type": "git",
+        "url": "file:///home/markome/projects/fin-dash"
+      }
+    },
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
@@ -193,6 +213,26 @@
         "owner": "SenchoPens",
         "repo": "fromYaml",
         "type": "github"
+      }
+    },
+    "funnel-toggle": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1792718751,
+        "narHash": "sha256-WYgBdU/JijMMGBif2wdaKgXm4W9t0jXPsMPE6eSag80=",
+        "ref": "refs/heads/main",
+        "rev": "c948e8f32aa7d5871fecf6d5cc775269b9242bec",
+        "revCount": 1,
+        "type": "git",
+        "url": "file:///home/markome/projects/funnel-toggle"
+      },
+      "original": {
+        "type": "git",
+        "url": "file:///home/markome/projects/funnel-toggle"
       }
     },
     "gnome-shell": {
@@ -362,7 +402,9 @@
       "inputs": {
         "agenix": "agenix",
         "blip": "blip",
+        "fin-dash": "fin-dash",
         "flake-parts": "flake-parts",
+        "funnel-toggle": "funnel-toggle",
         "import-tree": "import-tree",
         "nix-flatpak": "nix-flatpak",
         "nixpkgs": "nixpkgs",

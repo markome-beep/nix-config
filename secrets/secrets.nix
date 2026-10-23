@@ -6,4 +6,5 @@ in
     publicKeys = [ system ];
     amror = true;
   };
+  "guacamole-users.age".publicKeys = [ system ];
 }

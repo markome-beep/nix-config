@@ -8,6 +8,7 @@
         unzip
         ripgrep
         fzf
+        devenv
         claude-code
       ];
     };
