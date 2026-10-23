@@ -19,7 +19,7 @@ hl.monitor({
 local terminal = "wezterm"
 local browser  = "zen-beta"
 -- local fileManager = "dolphin"
-local menu     = 'pkill rofi || rofi -show combi -modes combi -combi-modes "window,drun,run"'
+local menu     = 'pkill rofi || rofi -show combi -modes combi -combi-modes "window,drun"'
 
 
 -------------------
@@ -32,6 +32,10 @@ local menu     = 'pkill rofi || rofi -show combi -modes combi -combi-modes "wind
 -- Or execute your favorite apps at launch like this:
 
 hl.on("hyprland.start", function()
+    -- Bring up graphical-session.target (via hyprland-session.target from hyprland.nix),
+    -- xdg-desktop-portal refuses to start without it (screen sharing, file drag and drop)
+    hl.exec_cmd("dbus-update-activation-environment --systemd --all && systemctl --user start hyprland-session.target")
+
     hl.exec_cmd(terminal)
     hl.exec_cmd("quickshell")
     hl.exec_cmd("hypridle")
@@ -84,6 +88,8 @@ hl.config({
         col = {
             active_border   = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
             inactive_border = "rgba(595959aa)",
+        },
+
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
         resize_on_border = false,
 
@@ -188,6 +194,10 @@ hl.config({
         force_default_wallpaper  = 0,
         disable_hyprland_logo    = true,
         disable_splash_rendering = true,
+    },
+
+    -- vfr lives under debug since Hyprland 0.56
+    debug = {
         vfr = true,
     },
 })

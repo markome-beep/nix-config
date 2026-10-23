@@ -1,0 +1,124 @@
+/* Tokyo Night, framed like the Hyprland window borders */
+
+* {
+    bg:       #1a1b26;
+    surface:  #24283b;
+    overlay:  #2f3549;
+    fg:       #c0caf5;
+    subtext:  #a9b1d6;
+    muted:    #565f89;
+    accent:   #33ccff;
+    accent-2: #00ff99;
+    urgent:   #f7768e;
+
+    font:             "DejaVu Sans 11";
+    background-color: transparent;
+    text-color:       @fg;
+    margin:           0;
+    padding:          0;
+    spacing:          0;
+}
+
+window {
+    location:         center;
+    width:            640px;
+    border-radius:    14px;
+    /* The padding shows the gradient behind mainbox, drawing a 2px border */
+    padding:          2px;
+    /* gradients cannot use @variables: accent to accent-2 */
+    background-image: linear-gradient(45deg, #33ccff, #00ff99);
+}
+
+mainbox {
+    background-color: @bg;
+    border-radius:    12px;
+    padding:          18px;
+    spacing:          14px;
+    children:         [ inputbar, message, listview ];
+}
+
+inputbar {
+    background-color: @surface;
+    border-radius:    10px;
+    padding:          12px 16px;
+    spacing:          12px;
+    children:         [ prompt, entry ];
+}
+
+prompt {
+    text-color: @accent;
+}
+
+entry {
+    placeholder:       "Search apps, windows and commands";
+    placeholder-color: @muted;
+    cursor:            text;
+}
+
+message {
+    background-color: @surface;
+    border-radius:    10px;
+    padding:          10px 16px;
+}
+
+textbox {
+    text-color: @subtext;
+}
+
+listview {
+    lines:        8;
+    columns:      1;
+    fixed-height: false;
+    dynamic:      true;
+    scrollbar:    false;
+    cycle:        true;
+    spacing:      4px;
+}
+
+element {
+    padding:       9px 14px;
+    border-radius: 10px;
+    spacing:       14px;
+    cursor:        pointer;
+}
+
+element normal.normal,
+element alternate.normal {
+    text-color: @subtext;
+}
+
+element normal.active,
+element alternate.active {
+    text-color: @accent-2;
+}
+
+element normal.urgent,
+element alternate.urgent {
+    text-color: @urgent;
+}
+
+element selected.normal,
+element selected.active {
+    background-color: @overlay;
+    text-color:       @fg;
+}
+
+element selected.urgent {
+    background-color: @urgent;
+    text-color:       @bg;
+}
+
+element-icon {
+    size:             26px;
+    vertical-align:   0.5;
+    background-color: transparent;
+    text-color:       inherit;
+}
+
+element-text {
+    vertical-align:   0.5;
+    background-color: transparent;
+    text-color:       inherit;
+    highlight:        bold #33ccff;
+    cursor:           inherit;
+}
