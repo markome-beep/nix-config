@@ -156,7 +156,9 @@
         partOf = [ "graphical-session.target" ];
         after = [ "graphical-session.target" ];
         serviceConfig = {
-          ExecStart = "${pkgs.wayvnc}/bin/wayvnc 127.0.0.1 5900";
+          # --render-cursor draws the pointer into the frames: Hyprland doesn't hand wayvnc the
+          # cursor separately, so without it the stream has no cursor at all
+          ExecStart = "${pkgs.wayvnc}/bin/wayvnc --render-cursor 127.0.0.1 5900";
           Restart = "on-failure";
           RestartSec = "5s";
         };
