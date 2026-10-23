@@ -11,6 +11,7 @@
       self.nixosModules.hyprpaper
       self.nixosModules.greetd
       self.nixosModules.keyring
+      self.nixosModules.bitwarden
       self.nixosModules.rofi
       self.nixosModules.swaync
       self.nixosModules.cursor
@@ -38,6 +39,8 @@
 
     age.secrets.github-token.file = ../../../secrets/github-token.age;
     age.identityPaths = [ "/home/markome/.ssh/id_ed25519" ];
+    # CLI for editing the secrets: `agenix -e <file>.age` from inside secrets/
+    environment.systemPackages = [ inputs.agenix.packages.${pkgs.stdenv.hostPlatform.system}.default ];
 
     nix.settings = {
       access-tokens = config.age.secrets.github-token.path;

@@ -38,4 +38,4 @@ Flakes only see files tracked by git: **`git add` any new file** before building
 
 ## Secrets
 
-agenix. `secrets/secrets.nix` lists recipient keys per `.age` file; the system decrypts with `/home/markome/.ssh/id_ed25519`. `github-token.age` is used as `nix.settings.access-tokens`. Edit with `agenix -e github-token.age` from inside `secrets/`.
+agenix. `secrets/agenix-rules.nix` lists recipient keys per `.age` file (agenix finds it from `secrets/` or any parent); the system decrypts with `/home/markome/.ssh/id_ed25519`. `github-token.age` is used as `nix.settings.access-tokens`. Edit with `agenix -e github-token.age` from inside `secrets/`.

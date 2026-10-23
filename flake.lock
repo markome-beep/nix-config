@@ -115,11 +115,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792636798,
-        "narHash": "sha256-i0AkXUzBaLLYabjWtiQ/F7lLKDlAh3pQNsTeVgB879Y=",
+        "lastModified": 1792729174,
+        "narHash": "sha256-m0o9wwt2KdyhlK1B98aeM1kT0GlF+IiXy/MXMvf5dYg=",
         "ref": "refs/heads/main",
-        "rev": "cad9286aa1b788934e8d1abdc1e206fceb894dd5",
-        "revCount": 2,
+        "rev": "75a9f8b15dc94d01afc1c4e93f353331e3ffef92",
+        "revCount": 3,
         "type": "git",
         "url": "file:///home/markome/projects/fin-dash"
       },
