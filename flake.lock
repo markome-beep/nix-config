@@ -222,11 +222,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792718751,
-        "narHash": "sha256-WYgBdU/JijMMGBif2wdaKgXm4W9t0jXPsMPE6eSag80=",
+        "lastModified": 1792723479,
+        "narHash": "sha256-nKW5JXta6i4e77ZYMa+Yf+YQjdPyau39sp7/ppau0Qk=",
         "ref": "refs/heads/main",
-        "rev": "c948e8f32aa7d5871fecf6d5cc775269b9242bec",
-        "revCount": 1,
+        "rev": "42109732a81257ea0aa9474b21d1d7cce3a0ff2d",
+        "revCount": 2,
         "type": "git",
         "url": "file:///home/markome/projects/funnel-toggle"
       },

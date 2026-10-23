@@ -18,7 +18,8 @@
       adminUser = "markome";
     in
     {
-      # Browser remote desktop: http://dev-one:8080/guacamole/
+      # Browser remote desktop: http://dev-one:8080/guacamole/ on the tailnet. Only runs while
+      # the Funnel Toggle is on (see funnel-toggle.nix)
       # Browser -> Tomcat (guacamole-client) -> guacd -> wayvnc on 127.0.0.1:5900 -> Hyprland
       #
       # Logins live in Postgres (Guacamole's JDBC auth has no SQLite backend) so the TOTP
@@ -141,8 +142,11 @@
 
       systemd.services.tomcat.serviceConfig.EnvironmentFile = "${stateDir}/env";
 
-      # Guacamole web UI. guacd, wayvnc and Postgres stay on localhost
-      networking.firewall.allowedTCPPorts = [ config.services.tomcat.port ];
+      # Guacamole web UI, tailnet only (Funnel reaches it over localhost). guacd, wayvnc and
+      # Postgres stay on localhost
+      networking.firewall.interfaces.${config.services.tailscale.interfaceName}.allowedTCPPorts = [
+        config.services.tomcat.port
+      ];
 
       # Hyprland is Wayland, so the VNC server has to run inside the session.
       # No VNC auth: it only listens on localhost, Guacamole's login is the gate
