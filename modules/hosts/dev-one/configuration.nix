@@ -20,6 +20,7 @@
 
       self.nixosModules.shell
       self.nixosModules.cli-apps
+      self.nixosModules.claude-code
       self.nixosModules.commands
       self.nixosModules.neovim
       self.nixosModules.git

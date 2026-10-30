@@ -9,7 +9,6 @@
         ripgrep
         fzf
         devenv
-        claude-code
       ];
     };
 }
